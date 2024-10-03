@@ -1,0 +1,151 @@
+﻿<html lang="fa" dir="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>طراحی آزمون ریاضی</title>
+</head>
+<body>
+
+<header class="header">
+    <span class="header_icon"><i class="fa fa-bars"></i></span>
+    <h3>طراحی آزمون دروس ریاضی دوره متوسطه اول</h3>
+    </header>
+    
+    
+    <ul class="side-menu">
+        <span class="menu-timesbtn"><i class="fa fa-times"></i></span>
+        <li class="header-btn aboutbtn">درباره ما</li>
+        <li class="header-btn contactbtn">ارتباط با ما</li>
+        <li class="header-btn instructionbtn">راهنمای استفاده از سایت</li>
+    </ul>
+
+    <div class="btntext">
+        <p class="about">من مقداد محمدمرادی طراح وب هستم. هدف از طراحی این سایت کمک به معلمین عزیز جهت طراحی آزمون های ریاضی است.
+        </p>
+        <p class="contact">
+                شما می توانید از طریق ایمیل mmoradimeghdad@gmail.com با بنده در ارتباط باشید.
+        </p>
+        <p class="instruction">
+            ابتدا پایه تحصیلی و سپس فصل مورد نظر خود را انتخاب کنید تا سؤالهای مربوطه نمایش داده شود. سپس با کلیک روی هر سؤال می توانید آن را در فرم سؤالها مشاهده کنید. پس از انتخاب همه سؤالهای مورد نظر خود، با کلیک روی دکمه چاپ سؤالها می توانید از فرم سؤالات خروجی بگیرید.
+        </p>
+    </div>
+
+            
+<main class="main">
+  <div class="container">	
+    <section class="topmain">
+       <div class="grinput-wrapper">        
+         <div class="grade-wrapper">
+            <p class="gradetext">پایه تحصیلی:</p>
+         </div>
+         <div class="gradesbtn-wrapper">
+            <input class="gradesbtn gradebtn0" type="button" value="هفتم">
+            <input class="gradesbtn gradebtn1" type="button" value="هشتم">
+            <input class="gradesbtn gradebtn2" type="button" value="نهم">
+         </div>
+        </div>
+
+        <div class="chinput-wrapper">
+            <p class="chpatertext">فصل:</p>
+            <div class="radio-wrapper">
+                <input class="chapter" type="radio" name="chapter" id="ch1">
+                <label for="ch1">فصل1</label>
+                <input class="chapter" type="radio" name="chapter" id="ch2">
+                <label for="ch2">فصل2</label>
+                <input class="chapter" type="radio" name="chapter" id="ch3">
+                <label for="ch3">فصل3</label>
+                <input class="chapter" type="radio" name="chapter" id="ch4">
+                <label for="ch4">فصل4</label>
+                <input class="chapter" type="radio" name="chapter" id="ch5">
+                <label for="ch5">فصل5</label>
+                <input class="chapter" type="radio" name="chapter" id="ch6">
+                <label for="ch6">فصل6</label>
+                <input class="chapter" type="radio" name="chapter" id="ch7">
+                <label for="ch7">فصل7</label>
+                <input class="chapter" type="radio" name="chapter" id="ch8">
+                <label for="ch8">فصل8</label>
+                <input class="chapter" type="radio" name="chapter" id="ch9">
+                <label for="ch9">فصل9</label>
+            </div>
+        </div>
+  </div>
+
+    </section>
+    <section class="bottommain">
+    <div class="questionlist">
+        <div class="questionlist-wrapper">
+            <table class="questionlist-table">
+                 <tr class="qtitr">
+                     <th>ردیف</th>
+                     <th>شرح سوال</th>
+                     <th> منبع سوال</th>
+                     </tr>
+            </table>
+         </div>
+         <div>
+            <ul class="buttons-wrapper">
+                <li id="insertallquestions">قرار دادن همه سؤالها در فرم</li>
+                <li id="numbering">شماره گذاری سؤالها</li>
+                <li id="clearall">حذف همه سؤالها</li>
+                <li id="sendtoPDF">چاپ سؤالها</li>
+            </ul>
+          </div>
+      </div>
+            
+         <div class="qtable-wrapper">			
+              <table id="questionsTable">
+                     <tr>
+                         <th></th>
+                         <th class="besm"> </td>
+                         <th></th>
+                      </tr>
+            
+                      <tr class="titr">
+                          <td class="testgrade">آزمون ریاضی پایه</td>
+                          <td><input type="text" class="testgradecontent"></td>
+                          <td class="regiontitr">آموزش و پرورش منطقه</td>
+                          <td><input type="text" class="regionname" value=""></td>
+                          <td class="testdate">تاریخ آزمون:</td>
+                          <td><input type="text" class="testdatecontent" value=""></td>
+                       </tr>
+            
+                       <tr class="titr">
+                           <td class="educationyear">سال تحصیلی:</td>
+                           <td><input type="text" class="yearcontent" value=""></td>
+                           <td class="schoolname">نام مدرسه:</td>
+                           <td><input type="text" class="schoolnamecontent" value=""></td>
+                           <td class="testtime">مدت آزمون:</td>
+                           <td><input type="text" class="testtimecontent" value=""></td>
+                        </tr>
+                            
+                        <tr class="titr">
+                            <td class="studentname">نام دانش آموز:</td>
+                            <td class="testterm">شرح آزمون:</td>
+                            <td><input type="text" class="testtermcontent" value=""></td>
+                            <td class="numberofpages">تعداد صفحه:</td>
+                            <td><input type="text" class="numberofpagescontent" value=""></td>
+                        </tr>
+                        <tr>
+                           <th class="questionnumber">ردیف</th>
+                           <th class="questions">سؤالات</th>
+                           <th class="marks" title="نمره هر سؤال را وارد کنید.";>بارم</th>
+                        </tr>
+                 </table>
+            </div>
+</section>
+</div>
+</main>
+            
+    
+
+<footer class="footer">
+    <p>کلیه حقوق محفوظ است.</p>
+</footer>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>

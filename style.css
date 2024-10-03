@@ -1,0 +1,534 @@
+@font-face {
+  font-family: "Shabnam-FD" ;
+  src: url("./fonts/Shabnam-FD.woff2");
+} 
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .qtable-wrapper, .qtable-wrapper *{
+    visibility: visible;
+  }
+
+  .qtable-wrapper{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2.78rem;
+    margin: 0;
+  }
+
+
+  .qtable-wrapper, input{
+    border: none;
+  }
+}
+
+body {
+    font-family: "Shabnam-FD";
+    background-color: #EEEEEE;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.header, .footer {
+    background-color: rgb(47, 91, 234,0.13);
+    padding: 1rem;
+    color: rgb(47, 91, 234);
+    margin-bottom: 0.5rem;
+}
+
+.header_icon{
+  position: absolute;
+  font-size: 1.5rem;
+  color: rgb(47, 91, 234);
+  left: 2rem;
+  cursor: pointer;
+}
+
+.side-menu{
+  list-style-type: none ;
+  width: 200px;
+  left: -200px;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 1rem;
+  gap: 1rem;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  z-index: 2;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in;
+  background-color: rgb(47, 91, 234,0.13);
+  backdrop-filter: blur(15px);
+}
+
+.menu-timesbtn{
+  direction: rtl;
+}
+
+.btntext{
+  height: 150px;
+  left: 200px;
+  right: 0;
+  top: -200px;
+  bottom: 0;
+  margin: 0;
+  padding: 1rem;
+  gap: 1rem;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  z-index: 2;
+  color: #1e88e5;
+  cursor: pointer;
+  border-radius: 1rem;
+  transition: 0.8s all;
+  background-color: rgba(30, 136, 229,0.13);
+  backdrop-filter: blur(15px);
+}
+
+.btntext p{
+ display: none;
+ text-align: justify;
+ direction: rtl;
+ font-size: 1.2rem;
+ padding: 1rem;
+}
+
+
+.header-btn, .header-btn a{
+  width: 100%;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  color: inherit;
+  background-color: #1E88E5;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.header-btn:hover{
+  opacity: 0.7;
+}
+
+.topmain{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+}
+
+.gradetext, .chpatertext{
+  background-color: #42A5F5;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  color: #fff;
+  width: 200px ;
+  height: 50px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.chpatertext{
+  visibility: hidden;
+}
+
+.gradesbtn-wrapper {
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+} 
+
+.gradesbtn{
+  width: 3rem;
+  background-color: #42A5F5;
+  color: #F5F5F5;
+  text-align: center;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.gradesbtn:hover{
+  background-color: blue;
+}
+
+.grinput-wrapper, .chinput-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  padding: 1rem;
+  margin: 1rem 2rem;
+  width: 200px;
+}
+
+.radio-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  visibility: hidden;
+  color: #42A5F5;
+}
+
+h3 {
+  padding-top: 15px;
+  padding-right: 5px;
+  direction: rtl;
+}
+
+.main {
+  min-height: 100vh;
+}
+.container{
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 1rem;
+  background-color: rgb(47, 91, 234,0.13);
+  backdrop-filter: blur(15px);
+}
+
+.questionlist-wrapper {
+  display: none;
+  overflow-y: auto;
+  outline: none;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  height: 300px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.buttons-wrapper{
+  width: 710px;
+  display: grid;
+  grid-template-columns: repeat(4,auto);
+  list-style-type: none;
+  padding: 0.5rem 0;
+  gap: 0.5rem;
+}
+
+.buttons-wrapper li {
+  height:40px;
+  background-color: rgb(47, 91, 234,0.13);
+  backdrop-filter: blur(15px);
+  color: rgb(47, 91, 234);
+  border-radius: 0.5rem;
+  border:none;
+  outline: none;
+  cursor: pointer;
+  font-family: "Shabnam-FD";
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.buttons-wrapper li:hover {
+  font-weight: bold;
+  color: #fff;
+  background-color: #0277BD;
+}
+
+.questionlist-table{
+  border-collapse: collapse;
+}
+
+.qtitr {
+  position: sticky;
+  top: -1;
+  background-color: #0277BD;
+
+}
+
+.questionlist{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.lquestions:hover{
+  background-color: #1e88e5;
+}
+
+.questionlist-wrapper img {
+  width: 640px;
+  margin-top: 0px;
+  cursor: pointer;
+}
+
+.questionlist-wrapper img:hover{
+  background-color: #A5D6A7;
+}
+
+.questionlist-wrapper td {
+  border: 2px solid black;
+  text-align: center;
+}
+
+.questionlist-wrapper th {
+  border:2px solid black;
+  text-align: center;
+}
+
+.bottommain {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin-right: -2200px;
+  transition: 1.5s all ease;
+  gap: 0;
+}
+
+.titr {
+  display: flex;
+  height: 30px; 
+}
+
+.besm {
+  padding-bottom: 10px;
+}
+
+.testgrade {
+position: absolute;
+width: 30%;
+margin-right: 10px;
+}
+
+.educationyear {
+position: absolute;
+width: 30%;
+margin-right: 10px;
+}
+
+.yearcontent {
+  font-family: "Shabnam-FD";
+  position: absolute;
+  text-align: right;
+  margin-right: 100px;
+  width: 100px;
+}
+
+
+.studentname {
+  position: absolute;
+  width: 30%;
+  margin-right: 10px;
+  }
+  
+
+.testgradecontent {
+  font-family: "Shabnam-FD";
+  position: absolute;
+  text-align: right;
+  margin-right: 120px;
+  width: 100px;
+}
+
+.regiontitr {
+  position: absolute;
+  text-align: center;
+  margin-right: 260px;
+}
+
+.region {
+  position: absolute;
+  text-align: center;
+  margin-right: 287px;
+}
+
+
+.regionname {
+  font-family: "Shabnam-FD";
+  position: absolute;
+  text-align: right;
+  margin-right: 410px;
+  width: 80px;
+}
+
+.testterm {
+  position: absolute;
+  text-align: center;
+  margin-right: 295px;
+}
+
+.testtermcontent {
+  font-family: "Shabnam-FD";
+  position: absolute;
+  text-align: right;
+  margin-right: 375px;
+  width: 117px;
+}
+
+.schoolname {
+  position: absolute;
+  text-align: center;
+  margin-right: 300px;
+}
+
+.schoolnamecontent {
+  font-family: "Shabnam-FD";
+  position: absolute;
+  text-align: right;
+  margin-right: 373px;
+  width: 117px;
+}
+
+.testdatecontent {
+  font-family: "Shabnam-FD";
+  position: absolute;
+  text-align: right;
+  margin-right: 610px;
+  width: 90px;
+}
+
+.testdate {
+  position: absolute;
+  width: 30%;
+  text-align: right;
+  margin-right: 527px;
+}
+
+.testtime {
+  position: absolute;
+  width: 30%;
+  text-align: right;
+  margin-right: 527px;
+}
+
+.testtimecontent {
+  font-family: "Shabnam-FD";
+  position: absolute;
+  text-align: right;
+  margin-right: 610px;
+  width: 90px;
+}
+
+.numberofpages {
+  position: absolute;
+  width: 30%;
+  text-align: right;
+  margin-right: 520px;
+}
+
+.numberofpagescontent {
+  font-family: "Shabnam-FD";
+  position: absolute;
+  text-align: right;
+  margin-right: 612px;
+  width: 90px;
+}
+
+.qtable-wrapper{
+  width: 710px;
+  background-color: #fff;
+}
+
+
+#questionsTable{
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+
+
+.questions {
+  position: relative;
+  width: 640px;
+  text-align: center;
+  border-top: 1px solid black;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.qimage {
+  width: 640px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.questionNumber {
+  position: relative;
+  text-align: center;
+  width: 30px;
+  font-size: 80%;
+  border: 1px solid black;
+}
+
+.marks {
+  width: 32px;
+  position: relative;
+  text-align: center;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  font-size: 80%;
+}
+
+.marks input {
+  text-align: center;
+  width: 90%;
+  height: 70%;
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  border: none;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.marks input:hover {
+  background-color: powderblue;
+}
+
+.questionNumber button {
+  position: absolute;
+  top: 2px;
+  right: 1px;
+  left: 1px;
+  width: 90%;
+  font-size: 10px;
+  background-color: #1E88E5;
+  color:white;
+  border-radius: 100%;
+  border:none;
+  cursor: pointer;
+  font-family: "Shabnam-FD";
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.questionNumber button:hover{
+  background-color: red;
+}
+
+.footer p{
+  text-align: center;
+}
