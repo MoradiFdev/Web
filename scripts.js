@@ -3,6 +3,7 @@ let numbering = document.getElementById('numbering');
 let clearall = document.getElementById('clearall');
 let qtable = document.querySelector('.questionstable');
 let qlist = document.querySelector('.questionlist-table');
+let qtablewrapper = document.querySelector('.qtable-wrapper');
 let testgradecontent=document.querySelector('.testgradecontent');
 let insertallquestions = document.getElementById('insertallquestions');
 let bottommain=document.querySelector(".bottommain");
@@ -35,6 +36,9 @@ let sliderleftchapters=document.querySelector(".slider-left-chapters");
 let bookssliderbox=document.querySelector(".books-slider-box");
 let sliderrightbooks=document.querySelector(".slider-right-books");
 let sliderleftbooks=document.querySelector(".slider-left-books");
+let npages=document.querySelector('.npagesvalue');
+let inputwrapper=document.querySelectorAll('.inputwrapper');
+let inputs=document.querySelectorAll('.inputs');
 
 let source=[];
 let mathsource = [[[
@@ -1099,8 +1103,11 @@ let mathsource = [[[
     //الحمدلله   
 ]];
 let sciencesource=[];
-let gradenumber;
-let chapternumber;
+let gradenumber=0;
+let chapternumber=0;
+let bookname;
+let gradename;
+let qheight;
 
 sliderrightbooks.addEventListener('click', function(){
     bookssliderbox.style.transform+='translate(300px)';
@@ -1128,6 +1135,7 @@ sliderleftchapters.addEventListener('click', function(){
 
 math.addEventListener('click', function(){
     source=mathsource;
+    bookname="ریاضی";
     math.style.backgroundColor="#42A5F5";
     science.style.backgroundColor="#F5F5F5";
     gradesbtnbox.style.marginRight=0;
@@ -1179,6 +1187,7 @@ science.addEventListener('click', function(){
 
     for (let i=0; i<gradesbtn.length; i++){
         gradesbtn[i].addEventListener('click', function(){
+            gradename=gradesbtn[i].textContent;
             chapterbox.style.marginRight=0;
             clearlistquestions();
             clearformquestions();
@@ -1330,26 +1339,32 @@ numbering.addEventListener('click', function(){
 
 
 sendtoPDF.addEventListener('click', function() {
-    let qtablewrapper = document.querySelector('.qtable-wrapper').cloneNode(true);
+    npages.innerHTML=Math.floor(qtablewrapper.clientHeight/900) + 1;
+    qtablewrapper.cloneNode(true);
+    // let inputs=qtablewrapper.querySelectorAll('input');
+    // inputs.forEach(input=> {
+    //     let textNode=document.createTextNode(input.value);
+    //     input.parentNode.replaceChild(textNode, input);
+    // });
+    for (var i=0; i<inputs.length; i++){
+        inputs[i].innerHTML=inputwrapper[i].value;
+    }
     
-    let inputs=qtablewrapper.querySelectorAll('input');
-
-    inputs.forEach(input=> {
-        let textNode=document.createTextNode(input.value);
-        input.parentNode.replaceChild(textNode, input);
-    });
-   
-    let printWindow=window.open('','_blank');
+    let printWindow=window.open('' ,'_blank');
     printWindow.document.write("<html><head><title></title>");
     printWindow.document.write("<link rel='stylesheet' type='text/css' href='./style.css'>");
     printWindow.document.write("</head><body>");
     printWindow.document.write(qtablewrapper.innerHTML);
     printWindow.document.write("</body></html>");
+    printWindow.document.title=" آزمون " + bookname + " پایه " + gradename;
     printWindow.document.close();
     printWindow.print();
 
     printWindow.onafterprint=function(){
         printWindow.close();
+    }
+    for (var i=0; i<inputs.length; i++){
+        inputs[i].innerHTML="";
     }
 })
 
@@ -1369,9 +1384,11 @@ function clearformquestions() {
     for (var i = 0; ; i++) {
         var row = document.querySelectorAll('.qfrow');
         if (row.length > 0) {
-            qtable.deleteRow(5);
+            qtable.deleteRow(4);
         }
         else { break; }
     }
+    npages.innerHTML="";
+
 }
 
