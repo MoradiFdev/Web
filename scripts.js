@@ -1158,7 +1158,7 @@ science.addEventListener('click', function(){
                 }
             }
                     clearlistquestions();
-                    loadques(gradenumber,s); 
+                    loadques(gradenumber,chapternumber); 
         })
     }
 
@@ -1166,7 +1166,6 @@ science.addEventListener('click', function(){
         gradebtn0.style.backgroundColor="#42A5F5";
         gradebtn1.style.backgroundColor="#F5F5F5";
         gradebtn2.style.backgroundColor="#F5F5F5";
-        gradenumber=0;
         chapter[8].style.display="block"; 
     })
 
@@ -1174,24 +1173,23 @@ science.addEventListener('click', function(){
         gradebtn1.style.backgroundColor="#42A5F5";
         gradebtn0.style.backgroundColor="#F5F5F5";
         gradebtn2.style.backgroundColor="#F5F5F5";
-        gradenumber=1;
         chapter[8].style.display="block"; 
     })
     gradebtn2.addEventListener('click', function(){
         gradebtn2.style.backgroundColor="#42A5F5";
         gradebtn0.style.backgroundColor="#F5F5F5";
         gradebtn1.style.backgroundColor="#F5F5F5";
-        gradenumber=2;
         chapter[8].style.display="none"; 
     })
 
     for (let i=0; i<gradesbtn.length; i++){
         gradesbtn[i].addEventListener('click', function(){
             gradename=gradesbtn[i].textContent;
+            gradenumber=i;
             chapterbox.style.marginRight=0;
             clearlistquestions();
             clearformquestions();
-            testgradecontent.value= gradetext[i].textContent;
+            // testgradecontent.value= gradetext[i].textContent;
             loadques(gradenumber,chapternumber);
         });
     }
@@ -1249,8 +1247,8 @@ instructionbtn.addEventListener('mouseleave', function(){
     btntext.style.top="-200px";
 })
 
-function loadques(gradenumber,s){
-            for (let k = 0; k < source[gradenumber][s].length; k++) {
+function loadques(gradenumber,chapternumber){
+            for (let k = 0; k < source[gradenumber][chapternumber].length; k++) {
                 var newqlRow = qlist.insertRow();
                 newqlRow.className = "qlrow";
                 newqlRow.title="برای اضافه شدن این سؤال به فرم روی آن کلیک کنید.";
@@ -1262,7 +1260,7 @@ function loadques(gradenumber,s){
                 cell2.className = 'lquestions';
                 var imgl = document.createElement('img');
                 imgl.className = 'limage';
-                imgl.src = source[gradenumber][s][k];
+                imgl.src = source[gradenumber][chapternumber][k];
                 imgl.addEventListener('click', function () {
                     var newqfRow = qtable.insertRow();
                     newqfRow.className = "qfrow";
@@ -1339,16 +1337,16 @@ numbering.addEventListener('click', function(){
 
 
 sendtoPDF.addEventListener('click', function() {
-    npages.innerHTML=Math.floor(qtablewrapper.clientHeight/900) + 1;
     qtablewrapper.cloneNode(true);
-    // let inputs=qtablewrapper.querySelectorAll('input');
-    // inputs.forEach(input=> {
-    //     let textNode=document.createTextNode(input.value);
-    //     input.parentNode.replaceChild(textNode, input);
-    // });
     for (var i=0; i<inputs.length; i++){
         inputs[i].innerHTML=inputwrapper[i].value;
     }
+    const formheight=qtablewrapper.clientHeight;
+    const a4hincm=29.7;
+    const dpi=80;
+    const a4hinpx=(a4hincm/2.54)*dpi;
+    const nofpages=Math.ceil(formheight/a4hinpx);
+    npages.innerHTML=nofpages;
     
     let printWindow=window.open('' ,'_blank');
     printWindow.document.write("<html><head><title></title>");
@@ -1363,9 +1361,7 @@ sendtoPDF.addEventListener('click', function() {
     printWindow.onafterprint=function(){
         printWindow.close();
     }
-    for (var i=0; i<inputs.length; i++){
-        inputs[i].innerHTML="";
-    }
+    
 })
 
 clearall.addEventListener('click', clearformquestions);
@@ -1384,9 +1380,12 @@ function clearformquestions() {
     for (var i = 0; ; i++) {
         var row = document.querySelectorAll('.qfrow');
         if (row.length > 0) {
-            qtable.deleteRow(4);
+            qtable.deleteRow(1);
         }
         else { break; }
+    }
+    for (var i=0; i<inputs.length; i++){
+        inputs[i].innerHTML="";
     }
     npages.innerHTML="";
 

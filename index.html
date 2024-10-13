@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <title>طراحی آزمون ریاضی</title>
+    <title>آزمونساز</title>
 </head>
 
 <body>
@@ -159,7 +159,47 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="ul-wrapper">
+                    
+                    <div class="form-wrapper">
+                        <div class="userinputs">			
+                                <div class="titrinpuuts">
+                                    <div class="input-box">
+                                        <div>پایه تحصیلی:</div>
+                                        <div><input type="text" class="inputwrapper"></div>
+                                    </div>
+                                    <div class="input-box">
+                                        <div>سال تحصیلی:</div>
+                                        <div><input type="text" class="inputwrapper"></div>
+                                    </div>
+                                </div>
+                        
+                                <div class="titrinputs">
+                                    <div class="input-box">
+                                        <div>آموزش و پرورش منطقه</div>
+                                        <div><input type="text" class="inputwrapper"></div>
+                                    </div>
+                                    <div class="input-box">
+                                        <div>نام مدرسه:</div>
+                                        <div><input type="text" class="inputwrapper"></div>
+                                    </div>
+                                    <div class="input-box">
+                                        <div>شرح آزمون:</div>
+                                        <div><input type="text" class="inputwrapper"></div>
+                                    </div>
+                                </div>
+                                        
+                                <div class="titrinputs">
+                                    <div class="input-box">
+                                        <div>تاریخ آزمون:</div>
+                                        <div><input type="text" class="inputwrapper"></div>
+                                    </div>
+                                    <div class="input-box">
+                                        <div>مدت آزمون:</div>
+                                        <div><input type="text" class="inputwrapper"></div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="ul-wrapper">
                             <ul class="buttons-wrapper">
                                 <li id="insertallquestions">قرار دادن همه سؤالها در فرم</li>
                                 <li id="numbering">شماره گذاری سؤالها</li>
@@ -167,73 +207,61 @@
                                 <li id="sendtoPDF">چاپ سؤالها</li>
                             </ul>
                     </div>
-                    <div class="form-wrapper">
-                        <div class="userinputs">			
-                                
-                                <div class="titr">
-                                    <div>آزمون ریاضی پایه</div>
-                                    <div><input type="text" class="inputwrapper"></div>
-                                    <div>آموزش و پرورش منطقه</div>
-                                    <div><input type="text" class="inputwrapper"></div>
-                                    <div>تاریخ آزمون:</div>
-                                    <div><input type="text" class="inputwrapper"></div>
+
+                    <div class="qtable-wrapper">			
+                        <div class="forminfo"> 
+                            <div class="titr">
+                                <div class="form-box">
+                                    <div class="testgrade">پایه تحصیلی:</div>
+                                    <div class="testgradevalue inputs"></div>
                                 </div>
-                        
-                                <div class="titr">
-                                    <div>سال تحصیلی:</div>
-                                    <div><input type="text" class="inputwrapper"></div>
-                                    <div>نام مدرسه:</div>
-                                    <div><input type="text" class="inputwrapper"></div>
-                                    <div>مدت آزمون:</div>
-                                    <div><input type="text" class="inputwrapper"></div>
-                                    </div>
-                                        
-                                <div class="titr">
-                                    <div>شرح آزمون:</div>
-                                    <div><input type="text" class="inputwrapper"></div>
-                                    <div>تعداد صفحه:</div>
-                                    <div></div>
+                                <div class="form-box">
+                                    <div class="educationyear">سال تحصیلی:</div>
+                                    <div class="yearvalue inputs"></div>
                                 </div>
-                                
+                                <div class="form-box">
+                                    <div class="studentname">نام دانش آموز:</div>
+                                </div>
+                            </div>
+                    
+                            <div class="titr">
+                                <div class="form-box">
+                                    <div class="regiontitr">آموزش و پرورش منطقه</div>
+                                    <div class="regionvalue inputs"></div>
+                                </div>
+                                <div class="form-box">
+                                    <div class="schoolname">نام مدرسه:</div>
+                                    <div class="schoolvalue inputs"></div>
+                                </div>
+                                <div class="form-box">
+                                    <div class="testterm">شرح آزمون:</div>
+                                    <div class="testdescvalue inputs"></div>
+                                </div>
+                            </div>
+                                    
+                            <div class="titr">
+                                <div class="form-box">
+                                    <div class="testdate">تاریخ آزمون:</div>
+                                    <div class="datevalue inputs"></div>
+                                </div>
+                                <div class="form-box">
+                                    <div class="testtime">مدت آزمون:</div>
+                                    <div class="testtimevalue inputs"></div>
+                                </div>
+                                <div class="form-box">
+                                    <div class="numberofpages">تعداد صفحه:</div>
+                                    <div class="npagesvalue"></div>
+                                </div>
+                            </div>
                         </div>
 
-
-                        <div class="qtable-wrapper">			
                             <table class="questionstable">
-                                
-                                <tr class="titr">
-                                    <td class="testgrade">آزمون ریاضی پایه</td>
-                                    <td class="testgradevalue inputs"></td>
-                                    <td class="regiontitr">آموزش و پرورش منطقه</td>
-                                    <td class="regionvalue inputs">
-                                    <td class="testdate">تاریخ آزمون:</td>
-                                    <td class="datevalue inputs"></td>
-                                </tr>
-                        
-                                <tr class="titr">
-                                    <td class="educationyear">سال تحصیلی:</td>
-                                    <td class="yearvalue inputs"></td>
-                                    <td class="schoolname">نام مدرسه:</td>
-                                    <td class="schoolvalue inputs"></td>
-                                    <td class="testtime">مدت آزمون:</td>
-                                    <td class="testtimevalue inputs"></td>
-                                </tr>
-                                        
-                                <tr class="titr">
-                                    <td class="studentname">نام دانش آموز:</td>
-                                    <td class="testterm">شرح آزمون:</td>
-                                    <td class="testdescvalue inputs"></td>
-                                    <td class="numberofpages">تعداد صفحه:</td>
-                                    <td class="npagesvalue"></td>
-                                </tr>
                                 <tr>
                                     <th class="questionnumber">ردیف</th>
                                     <th class="questions">سؤالات</th>
                                     <th class="marks" title="نمره هر سؤال را وارد کنید.">بارم</th>
                                 </tr>
                             </table>
-                        </div>
-
                     </div>
                     
             </section>

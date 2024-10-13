@@ -244,7 +244,7 @@
     padding: 1rem;
     margin: 2rem;
     border-radius: 1rem;
-    background-color: rgb(47, 91, 234);
+    background-color: #2f5bea;
   }
   
   .buttons-wrapper{
@@ -278,10 +278,57 @@
     justify-content: center;
     align-items: center;
   }
-
+.userinputs{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5px;
+  margin: 1rem 0;
+}
   .userinputs input{
+    width: 130px;
+    height: 100%;
+    margin: 5px;
     border: none;
     outline: none;
+    background-color: #2f5bea;
+    color: #fff;
+    font-family: "Shabnam-FD";
+    font-size: 1rem;
+  }
+  .titrinputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .input-box, .form-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    gap: 5px;
+    margin: 0.3rem;
+    padding: 0.2rem;
+  }
+
+  .input-box{
+    border: 2px solid #fff;
+    border-radius: 0.5rem;
+  }
+  .forminfo{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+  }
+  .titr{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   
@@ -297,7 +344,7 @@
     border-radius: 0.5rem;
     background-color: #fff;
     width: 1100px;
-    height: 300px;
+    height: 500px;
   }
   
   .questionlist-table{
@@ -323,8 +370,11 @@
   }
   
   .qtable-wrapper{
-    width: 720px;
+    width: 1100px;
     background-color: #fff;
+  }
+  .qtable-wrapper img{
+    margin-right: -350px;
   }
   
   .questionlist-wrapper td {
@@ -356,159 +406,6 @@
     padding-bottom: 10px;
   }
   
-  .testgrade {
-  position: absolute;
-  width: 30%;
-  margin-right: 10px;
-  }
-  
-  .educationyear {
-  position: absolute;
-  width: 30%;
-  margin-right: 10px;
-  }
-  
-  .yearcontent {
-    font-family: "Shabnam-FD";
-    text-align: right;
-    width: 100%;
-  }
-  
-  .yearvalue{
-    position: absolute;
-    margin-right: 100px;
-    width: 100px;;
-  }
-
-  .studentname {
-    position: absolute;
-    width: 30%;
-    margin-right: 10px;
-  }
-    
-  .testgradecontent {
-    font-family: "Shabnam-FD";
-    text-align: right;
-    width: 100%;
-  }
-
-  .testgradevalue{
-    position: absolute;
-    margin-right: 120px;
-    width: 100px;
-  }
-  
-  .regiontitr {
-    position: absolute;
-    text-align: center;
-    margin-right: 260px;
-  }
-  
-   
-  .regionname {
-    font-family: "Shabnam-FD";
-    text-align: right;
-    width: 100%;
-  }
-
-  .regionvalue{
-    position: absolute;
-    margin-right: 410px;
-    width: 80px;
-  }
-  
-  .testterm {
-    position: absolute;
-    text-align: center;
-    margin-right: 295px;
-  }
-  
-  .testdesc {
-    font-family: "Shabnam-FD";
-    text-align: right;
-    width: 100%;
-  }
-  
-  .testdescvalue{
-    position: absolute;
-    margin-right: 375px;
-    width: 117px;
-  }
-
-  .schoolname {
-    position: absolute;
-    text-align: center;
-    margin-right: 300px;
-  }
-  
-  .schoolnamecontent {
-    font-family: "Shabnam-FD";
-    text-align: right;
-    width: 100%;
-  }
-
-  .schoolvalue{
-    position: absolute;
-    margin-right: 373px;
-    width: 117px;
-  }
-  
-  .testdatecontent {
-    font-family: "Shabnam-FD";
-    text-align: right;
-    width: 100%;
-  }
-
-  .datevalue{
-    position: absolute;
-    margin-right: 610px;
-    width: 90px;
-  }
- 
-  .testdate {
-    position: absolute;
-    width: 30%;
-    text-align: right;
-    margin-right: 527px;
-  }
-  
-  .testtime {
-    position: absolute;
-    width: 30%;
-    text-align: right;
-    margin-right: 527px;
-  }
-  
-  .testtimecontent {
-    font-family: "Shabnam-FD";
-    text-align: right;
-    width: 100%;
-  }
-  
-  .testtimevalue{
-    position: absolute;
-    margin-right: 610px;
-    width: 90px;
-  }
-  .numberofpages {
-    position: absolute;
-    width: 30%;
-    text-align: right;
-    margin-right: 520px;
-  }
-  
-  .npages {
-    font-family: "Shabnam-FD";
-    text-align: right;
-    width: 100%;
-
-  }
-
-  .npagesvalue{
-    position: absolute;
-    margin-right: 612px;
-    width: 90px;
-  }
   
   .questionstable{
     width: 100%;
