@@ -22,25 +22,18 @@ let chapter=document.querySelectorAll(".chapter");
 let chapterbox=document.querySelector(".chapter-box");
 let gradesbtnbox=document.querySelector(".gradesbtn-box");
 let gradesbtn=document.querySelectorAll(".gradesbtn");
-let gradebtn0=document.querySelector(".gradebtn0");
-let gradebtn1=document.querySelector(".gradebtn1");
-let gradebtn2=document.querySelector(".gradebtn2");
-let gradetext=document.querySelectorAll(".gradesbtn p");
 let questionlistwrapper=document.querySelector(".questionlist-wrapper");
 let math=document.querySelector(".math");
 let science=document.querySelector(".science");
 let english=document.querySelector(".english");
-let chapterssliderbox=document.querySelector(".chapters-slider-box");
-let sliderrightchapters=document.querySelector(".slider-right-chapters");
-let sliderleftchapters=document.querySelector(".slider-left-chapters");
-let bookssliderbox=document.querySelector(".books-slider-box");
-let sliderrightbooks=document.querySelector(".slider-right-books");
-let sliderleftbooks=document.querySelector(".slider-left-books");
+let book=document.querySelectorAll(".book");
 let npages=document.querySelector('.npagesvalue');
 let inputwrapper=document.querySelectorAll('.inputwrapper');
 let inputs=document.querySelectorAll('.inputs');
+let selectedgrade=document.querySelector('.selectedgrade');
+let selectedbook=document.querySelector('.selectedbook');
+let selectedchapter=document.querySelector('.selectedchapter');
 
-let source=[];
 let mathsource = [[[
     //کتاب ریاضی هفتم
     //فصل اول
@@ -1103,53 +1096,59 @@ let mathsource = [[[
     //الحمدلله   
 ]];
 let sciencesource=[];
-let gradenumber=0;
-let chapternumber=0;
+let sourcepack=[mathsource, sciencesource];
+let source=[];
+let gradenumber=-1;
+let chapternumber=-1;
 let bookname;
 let gradename;
 let qheight;
 
-sliderrightbooks.addEventListener('click', function(){
-    bookssliderbox.style.transform+='translate(300px)';
-    sliderrightbooks.style.visibility="hidden";
-    sliderleftbooks.style.visibility="visible";
-})
+for (let i=0; i<gradesbtn.length; i++){
+    gradesbtn[i].addEventListener('click', function(){
+        clearlistquestions();
+        clearformquestions();
+        gradename=gradesbtn[i].textContent;
+        selectedgrade.innerHTML=" پایه " + gradesbtn[i].innerHTML;
+        gradenumber=i;
+        if (i==2){
+            chapter[8].style.display="none";
+        }else{
+            chapter[8].style.display="block";
+        }
+        gradesbtn[i].style.backgroundColor="#42A5F5";
+        for (let j=0; j<gradesbtn.length; j++){
+            if (j!=i){
+                gradesbtn[j].style.backgroundColor="#F5F5F5";
+            }
+        }
+        // testgradecontent.value= gradetext[i].textContent;
+        if (chapternumber!=-1){
+            loadques(gradenumber,chapternumber);
+        }
+    });
+}
 
-sliderleftbooks.addEventListener('click', function(){
-    bookssliderbox.style.transform+='translate(-300px)';
-    sliderleftbooks.style.visibility="hidden";
-    sliderrightbooks.style.visibility="visible";
-})
-
-sliderrightchapters.addEventListener('click', function(){
-    chapterssliderbox.style.transform+='translate(500px)';
-    sliderrightchapters.style.visibility="hidden";
-    sliderleftchapters.style.visibility="visible";
-})
-
-sliderleftchapters.addEventListener('click', function(){
-    chapterssliderbox.style.transform+='translate(-500px)';
-    sliderleftchapters.style.visibility="hidden";
-    sliderrightchapters.style.visibility="visible";
-})
-
-math.addEventListener('click', function(){
-    source=mathsource;
-    bookname="ریاضی";
-    math.style.backgroundColor="#42A5F5";
-    science.style.backgroundColor="#F5F5F5";
-    gradesbtnbox.style.marginRight=0;
-})
-
-science.addEventListener('click', function(){
-    source=sciencesource;
-    science.style.backgroundColor="#42A5F5";
-    math.style.backgroundColor="#F5F5F5";
-})
+for (let i=0; i<book.length; i++){
+    book[i].addEventListener('click', function(){
+        clearlistquestions();
+        clearformquestions();
+        bookname=book[i].innerHTML;
+        selectedbook.innerHTML=book[i].innerHTML;
+        source=sourcepack[i];
+        book[i].style.backgroundColor="#42A5F5";
+        for (let j=0; j<book.length; j++){
+            if (j!=i){
+                book[j].style.backgroundColor="#F5F5F5";
+            }
+        }
+    })
+}
 
     for (let s=0; s<chapter.length; s++){
         chapter[s].addEventListener('click',function(){
             chapternumber=s;
+            selectedchapter.innerHTML=chapter[s].innerHTML;
             bottommain.style.marginRight="0";
             chapter[s].style.backgroundColor="#42A5F5";
             for (let j=0;j<chapter.length;j++){
@@ -1158,41 +1157,13 @@ science.addEventListener('click', function(){
                 }
             }
                     clearlistquestions();
-                    loadques(gradenumber,chapternumber); 
+                    if (gradenumber!=-1){
+                     loadques(gradenumber,chapternumber); 
+                    }
         })
     }
 
-    gradebtn0.addEventListener('click', function(){
-        gradebtn0.style.backgroundColor="#42A5F5";
-        gradebtn1.style.backgroundColor="#F5F5F5";
-        gradebtn2.style.backgroundColor="#F5F5F5";
-        chapter[8].style.display="block"; 
-    })
-
-    gradebtn1.addEventListener('click', function(){
-        gradebtn1.style.backgroundColor="#42A5F5";
-        gradebtn0.style.backgroundColor="#F5F5F5";
-        gradebtn2.style.backgroundColor="#F5F5F5";
-        chapter[8].style.display="block"; 
-    })
-    gradebtn2.addEventListener('click', function(){
-        gradebtn2.style.backgroundColor="#42A5F5";
-        gradebtn0.style.backgroundColor="#F5F5F5";
-        gradebtn1.style.backgroundColor="#F5F5F5";
-        chapter[8].style.display="none"; 
-    })
-
-    for (let i=0; i<gradesbtn.length; i++){
-        gradesbtn[i].addEventListener('click', function(){
-            gradename=gradesbtn[i].textContent;
-            gradenumber=i;
-            chapterbox.style.marginRight=0;
-            clearlistquestions();
-            clearformquestions();
-            // testgradecontent.value= gradetext[i].textContent;
-            loadques(gradenumber,chapternumber);
-        });
-    }
+      
 
 menutimesbtn.addEventListener('click', function(){
     sidemenu.style.left="-200px"; 
@@ -1335,15 +1306,21 @@ numbering.addEventListener('click', function(){
     }
 }) 
 
-
 sendtoPDF.addEventListener('click', function() {
     qtablewrapper.cloneNode(true);
     for (var i=0; i<inputs.length; i++){
         inputs[i].innerHTML=inputwrapper[i].value;
     }
+    let marks=document.querySelectorAll('.marks');
+    let markinput=document.querySelectorAll('.markinput');
+    for (var i=0; i<markinput.length; i++){
+        marks[i+1].innerHTML=markinput[i].value;
+    }
+
     const formheight=qtablewrapper.clientHeight;
+    
     const a4hincm=29.7;
-    const dpi=80;
+    const dpi=72;
     const a4hinpx=(a4hincm/2.54)*dpi;
     const nofpages=Math.ceil(formheight/a4hinpx);
     npages.innerHTML=nofpages;

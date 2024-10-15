@@ -9,6 +9,7 @@
     font-family: "Shabnam-FD" ;
     src: url("./fonts/Shabnam-FD.woff2");
   } 
+
   body {
       font-family: "Shabnam-FD";
       background-color: #EEEEEE;
@@ -91,7 +92,11 @@
    padding: 1rem;
   }
   
-  
+  .header h2 {
+    padding-top: 15px;
+    padding-right: 5px;
+  }
+
   .header-btn, .header-btn a{
     width: 100%;
     text-decoration: none;
@@ -108,136 +113,122 @@
     opacity: 0.7;
   }
 
-
   .topmain{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: 0;
     padding: 0;
   }
 
-  .topmain h1{
+  .topmain h1, h2{
     color: #fff;
-    margin-right: 20rem;
   }
 
-  .topmain h2{
-    color: #fff;
-    margin-right: 5rem;
-
+   
+  .topmaintext{
+    display: flex;
+    flex-direction: column;
   }
-  .topmain h3{
-    margin-right: 10rem;
+  .topmaintext h2{
+    align-self: flex-start;
   }
   
+  .topmaintext h3{
+    align-self: center;
+  }
+
+  .topmaintext h1{
+    align-self: flex-end;
+  }
   .topmainimg{
     margin: 0;
     background-color: rgba(47, 91, 234);
     backdrop-filter: blur(15px);
-    width: 500px;
-    height: 500px;
+    width: 50%;
+    height: 50%;
   }
   
-  .topmainimg img{
+  .topmain img{
     width: 100%;
   }
-  
+
   .middlemain{
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 0 4rem;
+    padding: 0;
+  }
+
+  .dropdown-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
     gap: 1rem;
-    margin: 0;
+    margin: 0 4rem;
     padding: 0;
-  }
-  
-  .chapter-box, .book-box, .gradesbtn-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.8rem;
-    margin: 0;
-    padding: 0.7rem;
-    width: 1125px;
   }
 
-  .gradesbtn-box, .chapter-box{
-    margin-right: -2600px;
-    transition: 2s all ease-in-out;
-  }
-  
-  .chapter-wrapper, .book-wrapper{
+  .text-box{
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    gap: 0.4rem;
-    padding: 0, 0.5rem;
-    margin: 0;
-    width: 980px;
-    overflow: hidden;
-    border: 1px solid grey;
-    border-radius: 0.5rem;
-  }
-  
-  .books-slider-box, .chapters-slider-box{
-    display: flex;
     justify-content: flex-start;
-    gap: 0.4rem;
-    transition: all 2s ease;
-    padding:0.5rem;
+    justify-self: center;
+    color: #fff;
   }
-  
-  .slider-right-books, .slider-left-books, .slider-right-chapters, .slider-left-chapters{
-    background-color: greenyellow;
-    border-radius: 100%;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .books-slider-box > div, .gradesbtn-box > div, .chapters-slider-box > div{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #fff;
-    border-radius: 0.5rem;
-    box-shadow: 2px 3px 2px grey;
-    background-color: #F5F5F5;
-    margin: 0;
-    padding: 0;
-  }
-  
-  p{
+
+  .text-box p{
+    min-width: 80px;
+    background-color: #1E88E5;
+    height: 30px;
+    padding: 0.3rem;
+    border-radius: 1rem;
     text-align: center;
-    padding: 0.5rem;
   }
-  
-  .books, .gradesbtn, .chapter{
+
+  .dropdown-wrapper{
+    width: 130px;
+    height: 30px;
+    padding: 0.3rem 0;
+    background-color: #fff;
+    border-radius: 1rem;
+    text-align: center;
     cursor: pointer;
+  }
+
+  .dropdown-wrapper:hover .dropdown-btn{
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .dropdown-btn{
+    position: absolute;
     display: flex;
-    border-radius: 0.5rem;
-    box-shadow: 2px 3px 2px grey;
+    visibility: hidden;
+    opacity: 0;
+    margin-right: 0px;
+    background-color: #fff;
+    border-radius: 1rem;
+    z-index: 1;
+    margin-top: -28px;
+    margin-right: 133px;
     transition: all 1s ease;
-    width: 155px;
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
   }
-
-  .arrow-chevron{
-    width: 1.2rem;
-    height: 1.2rem;
-    color: #1E88E5;
-  }
-
   
-  .header h2 {
-    padding-top: 15px;
-    padding-right: 5px;
+  .dropdown-btn a{
+    min-width: 80px;
+    border-left: 1px solid grey;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.3rem;
+    border-radius: 1rem;
+  }
+
+  .dropdown-btn a:hover{
+    background-color: #1E88E5;
   }
   
   .container{
@@ -278,6 +269,7 @@
     justify-content: center;
     align-items: center;
   }
+
 .userinputs{
   display: flex;
   justify-content: space-evenly;
@@ -285,6 +277,7 @@
   gap: 5px;
   margin: 1rem 0;
 }
+
   .userinputs input{
     width: 130px;
     height: 100%;
@@ -296,12 +289,14 @@
     font-family: "Shabnam-FD";
     font-size: 1rem;
   }
+
   .titrinputs{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
+
   .input-box, .form-box{
     display: flex;
     align-items: center;
@@ -316,6 +311,7 @@
     border: 2px solid #fff;
     border-radius: 0.5rem;
   }
+
   .forminfo{
     width: 100%;
     height: 150px;
@@ -324,6 +320,7 @@
     align-items: center;
     border: 1px solid black;
   }
+  
   .titr{
     display: flex;
     flex-direction: column;
@@ -343,7 +340,7 @@
     outline: none;
     border-radius: 0.5rem;
     background-color: #fff;
-    width: 1100px;
+    width: 720px;
     height: 500px;
   }
   
@@ -363,18 +360,18 @@
   }
   
   .questionlist-wrapper img {
+    display: flex;
     width: 640px;
-    margin-top: 0px;
     cursor: pointer;
-    margin-right: -400px;
   }
   
   .qtable-wrapper{
-    width: 1100px;
+    width: 720px;
     background-color: #fff;
   }
   .qtable-wrapper img{
-    margin-right: -350px;
+    display: flex;
+    width: 640px;
   }
   
   .questionlist-wrapper td {
@@ -415,7 +412,7 @@
   
   .questions {
     position: relative;
-    width: 640px;
+    /* width: 640px; */
     text-align: center;
     border-top: 1px solid black;
     margin-right: auto;
@@ -423,7 +420,7 @@
   }
   
   .qimage {
-    width: 640px;
+    /* width: 640px; */
     margin-top: 5px;
     margin-bottom: 5px;
   }
@@ -487,3 +484,71 @@
   .footer p{
     text-align: center;
   }
+  
+@media (max-width: 1100px){
+  
+  h1, h2, h3{
+    font-size: 80%;
+  }
+  .middlemain{
+    flex-direction: row;
+    justify-content: center;
+  }
+  .dropdown-box{
+    flex-direction: row;
+    justify-content: center;
+  }
+  .dropdown-wrapper{
+    max-width: 80px;
+    font-size: 12px;
+  }
+  .dropdown-btn{
+    flex-direction: column;
+    margin-top: 5px;
+    margin-right: 0px;
+  }
+  .dropdown-btn a{
+    border-left: none;
+    border-bottom: 1px solid gray;
+    max-width: 80px;
+  }
+  .text-box p{
+    max-width: 80px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 900px){
+  .questionlist-wrapper, .qtable-wrapper, .form-wrapper{
+    max-width: 700px;
+  }
+  .form-wrapper{
+    align-items: center;
+    font-size: 12px;
+  }
+  .userinputs{
+    flex-direction: column;
+  }
+  .buttons-wrapper{
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width: 800px){
+  .questionlist-wrapper, .qtable-wrapper, .form-wrapper{
+    max-width: 350px;
+  }
+  .questionlist-wrapper img{
+    max-width: 290px;
+  }
+  .qtable-wrapper img{
+    max-width: 290px;
+  }
+  .forminfo{
+    font-size: 12px;
+  }
+}
