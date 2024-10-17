@@ -19,13 +19,8 @@ let about=document.querySelector(".about");
 let contact=document.querySelector(".contact");
 let instruction=document.querySelector(".instruction");
 let chapter=document.querySelectorAll(".chapter");
-let chapterbox=document.querySelector(".chapter-box");
-let gradesbtnbox=document.querySelector(".gradesbtn-box");
 let gradesbtn=document.querySelectorAll(".gradesbtn");
 let questionlistwrapper=document.querySelector(".questionlist-wrapper");
-let math=document.querySelector(".math");
-let science=document.querySelector(".science");
-let english=document.querySelector(".english");
 let book=document.querySelectorAll(".book");
 let npages=document.querySelector('.npagesvalue');
 let inputwrapper=document.querySelectorAll('.inputwrapper');
@@ -33,6 +28,7 @@ let inputs=document.querySelectorAll('.inputs');
 let selectedgrade=document.querySelector('.selectedgrade');
 let selectedbook=document.querySelector('.selectedbook');
 let selectedchapter=document.querySelector('.selectedchapter');
+let dropdownwrapper=document.querySelectorAll('.dropdown-wrapper');
 
 let mathsource = [[[
     //کتاب ریاضی هفتم
@@ -1095,8 +1091,31 @@ let mathsource = [[[
     //پایان درج سوالات سه کتاب:  14 اردیبهشت ماه 1403    
     //الحمدلله   
 ]];
-let sciencesource=[];
-let sourcepack=[mathsource, sciencesource];
+let socialsource=[[[
+    //کتاب مطالعات اجتماعی هفتم
+    //فصل اول
+    './images/social/7/001.png',
+    './images/social/7/002.png',
+    './images/social/7/003.png',
+    './images/social/7/004.png',
+    './images/social/7/005.png',
+    './images/social/7/006.png',
+    './images/social/7/007.png',
+    './images/social/7/008.png',
+    './images/social/7/009.png',
+    './images/social/7/010.png',
+    './images/social/7/011.png',
+    './images/social/7/012.png',
+    './images/social/7/013.png',
+    './images/social/7/014.png',
+    './images/social/7/015.png',
+    './images/social/7/016.png',
+    './images/social/7/017.png',
+    './images/social/7/018.png',
+    './images/social/7/019.png', //ch1 is completed.
+]
+]];
+let sourcepack=[mathsource, socialsource];
 let source=[];
 let gradenumber=-1;
 let chapternumber=-1;
@@ -1109,6 +1128,7 @@ for (let i=0; i<gradesbtn.length; i++){
         clearlistquestions();
         clearformquestions();
         gradename=gradesbtn[i].textContent;
+        inputwrapper[0].value=gradesbtn[i].innerHTML;
         selectedgrade.innerHTML=" پایه " + gradesbtn[i].innerHTML;
         gradenumber=i;
         if (i==2){
@@ -1122,11 +1142,10 @@ for (let i=0; i<gradesbtn.length; i++){
                 gradesbtn[j].style.backgroundColor="#F5F5F5";
             }
         }
-        // testgradecontent.value= gradetext[i].textContent;
-        if (chapternumber!=-1){
+        if (chapternumber!=-1 && gradenumber!=-1){
             loadques(gradenumber,chapternumber);
         }
-    });
+    })
 }
 
 for (let i=0; i<book.length; i++){
@@ -1135,12 +1154,17 @@ for (let i=0; i<book.length; i++){
         clearformquestions();
         bookname=book[i].innerHTML;
         selectedbook.innerHTML=book[i].innerHTML;
+        inputwrapper[4].value=book[i].innerHTML;
         source=sourcepack[i];
         book[i].style.backgroundColor="#42A5F5";
+
         for (let j=0; j<book.length; j++){
             if (j!=i){
                 book[j].style.backgroundColor="#F5F5F5";
             }
+        }
+        if (chapternumber!=-1 && gradenumber!=-1){
+            loadques(gradenumber,chapternumber);
         }
     })
 }
@@ -1157,13 +1181,11 @@ for (let i=0; i<book.length; i++){
                 }
             }
                     clearlistquestions();
-                    if (gradenumber!=-1){
-                     loadques(gradenumber,chapternumber); 
+                    if (chapternumber!=-1 && gradenumber!=-1){
+                        loadques(gradenumber,chapternumber);
                     }
         })
     }
-
-      
 
 menutimesbtn.addEventListener('click', function(){
     sidemenu.style.left="-200px"; 
@@ -1304,10 +1326,6 @@ numbering.addEventListener('click', function(){
     for (var i = 1; i < nums.length; i++) {
         nums[i].innerHTML = i;
     }
-}) 
-
-sendtoPDF.addEventListener('click', function() {
-    qtablewrapper.cloneNode(true);
     for (var i=0; i<inputs.length; i++){
         inputs[i].innerHTML=inputwrapper[i].value;
     }
@@ -1316,9 +1334,11 @@ sendtoPDF.addEventListener('click', function() {
     for (var i=0; i<markinput.length; i++){
         marks[i+1].innerHTML=markinput[i].value;
     }
+}) 
 
+sendtoPDF.addEventListener('click', function() {
+    qtablewrapper.cloneNode(true);
     const formheight=qtablewrapper.clientHeight;
-    
     const a4hincm=29.7;
     const dpi=72;
     const a4hinpx=(a4hincm/2.54)*dpi;
