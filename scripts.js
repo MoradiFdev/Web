@@ -1154,7 +1154,7 @@ for (let i=0; i<book.length; i++){
         clearformquestions();
         bookname=book[i].innerHTML;
         selectedbook.innerHTML=book[i].innerHTML;
-        inputwrapper[4].value=book[i].innerHTML;
+        inputwrapper[6].value=book[i].innerHTML;
         source=sourcepack[i];
         book[i].style.backgroundColor="#42A5F5";
 
@@ -1338,13 +1338,6 @@ numbering.addEventListener('click', function(){
 
 sendtoPDF.addEventListener('click', function() {
     qtablewrapper.cloneNode(true);
-    const formheight=qtablewrapper.clientHeight;
-    const a4hincm=29.7;
-    const dpi=72;
-    const a4hinpx=(a4hincm/2.54)*dpi;
-    const nofpages=Math.ceil(formheight/a4hinpx);
-    npages.innerHTML=nofpages;
-    
     let printWindow=window.open('' ,'_blank');
     printWindow.document.write("<html><head><title></title>");
     printWindow.document.write("<link rel='stylesheet' type='text/css' href='./style.css'>");
@@ -1358,7 +1351,6 @@ sendtoPDF.addEventListener('click', function() {
     printWindow.onafterprint=function(){
         printWindow.close();
     }
-    
 })
 
 clearall.addEventListener('click', clearformquestions);
