@@ -10,12 +10,9 @@
     src: url("./fonts/Shabnam-FD.woff2");
   } 
 
-  body {
-      font-family: "Shabnam-FD";
-      background-color: #EEEEEE;
-  }
-  
+    
   * {
+     font-family: "Shabnam-FD";
       box-sizing: border-box;
       margin: 0;
       direction: rtl;
@@ -23,181 +20,105 @@
   }
   
   .header, .footer {
-      background-color: rgb(47, 91, 234);
-      padding: 2rem;
-      color: #fff;
-      margin-bottom: 0.5rem;
-      font-family: "Shabnam-FD";
+     
   }
-  
-  .header_icon{
-    position: absolute;
-    font-size: 1.5rem;
-    color: #fff;
-    left: 2rem;
-    cursor: pointer;
-  }
-  
-  .side-menu{
-    list-style-type: none ;
-    width: 200px;
-    left: -200px;
+
+  .header-upper-elements{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    gap: 0.2rem;
+    position: fixed;
     top: 0;
-    bottom: 0;
-    margin: 0;
-    padding: 1rem;
-    gap: 1rem;
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    z-index: 2;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease-in;
-    background-color: rgb(33, 150, 243,0.13);
-    backdrop-filter: blur(15px);
-  }
-  
-.btntext{
-    height: 150px;
-    left: 200px;
-    right: 0;
-    top: -200px;
-    bottom: 0;
-    margin: 0;
-    padding: 1rem;
-    gap: 1rem;
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    z-index: 2;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 1rem;
-    transition: 0.8s all;
-    background-color: rgb(33, 150, 243,0.13);
-    backdrop-filter: blur(15px);
-  }
-  
-  .btntext p{
-   display: none;
-   text-align: justify;
-   direction: rtl;
-   font-size: 1.2rem;
-   padding: 1rem;
-  }
-  
-  .header h2 {
-    padding-top: 15px;
-    padding-right: 5px;
-  }
-
-  .header-btn, .header-btn a{
+    transition: all 1s ease;
+    background-color: transparent;
+    backdrop-filter: blur(30px);
     width: 100%;
+}
+
+.header-upper-elements a{
+    width: 120px;
+    height: 30px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
-    border-radius: 0.5rem;
-    color: inherit;
-    background-color: #1E88E5;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    font-weight: bold;
-    text-align: center;
-  }
+}
   
-  .header-btn:hover{
-    opacity: 0.7;
-  }
-
-  .topmain{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
-
-  .topmain h1, h2{
-    color: #fff;
-  }
-
-   
-  .topmaintext{
+.header-lower-elements{
+    width: 100%;
+    height: 1000px;
     display: flex;
     flex-direction: column;
-  }
-  .topmaintext h2{
-    align-self: flex-start;
-  }
-  
-  .topmaintext h3{
-    align-self: center;
-  }
-
-  .topmaintext h1{
-    align-self: flex-end;
-  }
-
-  .topmainimg{
-    margin: 0;
-    background-color: rgba(47, 91, 234);
-    backdrop-filter: blur(15px);
-    width: 50%;
-    height: 50%;
-  }
-  
-  .topmain img{
-    width: 100%;
-  }
-
-  .middlemain{
-    display: flex;
-    align-items: center;
     justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px;
     gap: 1rem;
-    margin: 0 4rem;
-    padding: 0;
-  }
+    color: white;
+    background-image: url('./images/bgc14.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}  
+
+.gradeandchapter-wrapper{
+  margin-top: -20px;
+  align-self: flex-start;
+  display: flex;
+  justify-content: flex-start;
+}
 
   .dropdown-box{
+    align-self: flex-start;
+    color: black;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     gap: 1rem;
-    margin: 0 4rem;
-    padding: 0;
+    padding: 1rem;
   }
 
+  
   .text-box{
+    align-self: flex-start;
+    color: black;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    justify-self: center;
-    color: #fff;
-    gap: 0.3rem;
-    margin-bottom: 0.3rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
   }
 
   .text-box p{
-    min-width: 100px;
-    background-color: #1E88E5;
-    height: 30px;
-    padding: 0.3rem;
+    min-width: 140px;
+    height: 50px;
+    padding: 0.7rem;
+    background-color: transparent;
+    color: #2f5bea;
     border-radius: 1rem;
-    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
   }
 
   .dropdown-wrapper{
     min-width: 140px;
     height: 50px;
     padding: 0.7rem;
-    background-color: #fff;
+    background-color:#1E88E5;
     border-radius: 1rem;
     cursor: pointer;
     position: relative;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
+  }
+
+  .dropdown-wrapper:nth-child(2){
+    background-color: #fb8c00;
   }
 
   .dropdown-content{
@@ -252,8 +173,8 @@
     outline: none;
     gap: 10px;
     background-color: transparent;
-    font-family: "Shabnam-FD";
     font-weight: bold;
+    color: #fff;
   }
 
   svg {

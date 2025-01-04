@@ -7,8 +7,6 @@ let qtablewrapper = document.querySelector('.qtable-wrapper');
 let testgradecontent=document.querySelector('.testgradecontent');
 let insertallquestions = document.getElementById('insertallquestions');
 let bottommain=document.querySelector(".bottommain");
-let headerIcon=document.querySelector(".header_icon");
-let headerIconi=document.querySelector(".header_icon i");
 let sidemenu=document.querySelector(".side-menu");
 let aboutbtn=document.querySelector(".aboutbtn");
 let contactbtn=document.querySelector(".contactbtn");
@@ -20,14 +18,13 @@ let instruction=document.querySelector(".instruction");
 let chapter=document.querySelectorAll(".chapter");
 let gradesbtn=document.querySelectorAll(".gradesbtn");
 let questionlistwrapper=document.querySelector(".questionlist-wrapper");
-let book=document.querySelectorAll(".book");
 let npages=document.querySelector('.npagesvalue');
 let inputwrapper=document.querySelectorAll('.inputwrapper');
 let inputs=document.querySelectorAll('.inputs');
 let selectedgrade=document.querySelector('.selectedgrade');
-let selectedbook=document.querySelector('.selectedbook');
 let selectedchapter=document.querySelector('.selectedchapter');
 let dropdownwrapper=document.querySelectorAll('.dropdown-wrapper');
+let headerlowerelements=document.querySelector('.header-lower-elements');
 
 let mathsource = [[[
     //کتاب ریاضی هفتم
@@ -1380,10 +1377,9 @@ let socialsource=[[[
 ];
 
 let sourcepack=[mathsource, socialsource];
-let source=[];
+let source=sourcepack[0];
 let gradenumber=-1;
 let chapternumber=-1;
-let bookname;
 let gradename;
 let qheight;
 
@@ -1412,27 +1408,6 @@ for (let i=0; i<gradesbtn.length; i++){
     })
 }
 
-for (let i=0; i<book.length; i++){
-    book[i].addEventListener('click', function(){
-        clearlistquestions();
-        clearformquestions();
-        bookname=book[i].innerHTML;
-        selectedbook.innerHTML=book[i].innerHTML;
-        inputwrapper[6].value=book[i].innerHTML;
-        source=sourcepack[i];
-        book[i].style.backgroundColor="#42A5F5";
-
-        for (let j=0; j<book.length; j++){
-            if (j!=i){
-                book[j].style.backgroundColor="#F5F5F5";
-            }
-        }
-        if (chapternumber!=-1 && gradenumber!=-1){
-            loadques(gradenumber,chapternumber);
-        }
-    })
-}
-
     for (let s=0; s<chapter.length; s++){
         chapter[s].addEventListener('click',function(){
             chapternumber=s;
@@ -1451,59 +1426,9 @@ for (let i=0; i<book.length; i++){
         })
     }
 
-headerIcon.addEventListener('click', function(){
-    if (headerIconi.classList.contains("fa-bars")){
-        sidemenu.style.left="0";
-        headerIconi.classList="fa fa-times";
-    }
-    else{
-        sidemenu.style.left="-200px"; 
-        headerIconi.classList="fa fa-bars";
-    }
-})
-
-aboutbtn.addEventListener('click', function(){
-    btntext.style.top="0";
-    about.style.display="block";
-    contact.style.display="none";
-    instruction.style.display="none";
-    btntext.style.height="80px";
-})
-
-aboutbtn.addEventListener('mouseleave', function(){
-    btntext.style.top="-200px";
-})
-
-contactbtn.addEventListener('click', function(){
-    btntext.style.top="0";
-    about.style.display="none";
-    contact.style.display="block";
-    instruction.style.display="none";
-    btntext.style.height="80px";
-})
-
-contactbtn.addEventListener('mouseleave', function(){
-    btntext.style.top="-200px";
-})
-
-instructionbtn.addEventListener('click', function(){
-    btntext.style.top="0";
-    about.style.display="none";
-    contact.style.display="none";
-    instruction.style.display="block";
-    btntext.style.height="150px";
-})
-
-instructionbtn.addEventListener('mouseleave', function(){
-    btntext.style.top="-200px";
-})
-
-sidemenu.addEventListener('mouseleave', function(){
-    this.style.left="-200px";
-    headerIconi.classList="fa fa-bars";
-})
 
 function loadques(gradenumber,chapternumber){
+            headerlowerelements.style.height='350px';
             for (let k = 0; k < source[gradenumber][chapternumber].length; k++) {
                 var newqlRow = qlist.insertRow();
                 newqlRow.className = "qlrow";
@@ -1619,7 +1544,7 @@ sendtoPDF.addEventListener('click', function() {
     printWindow.document.write("</head><body>");
     printWindow.document.write(qtablewrapper.innerHTML);
     printWindow.document.write("</body></html>");
-    printWindow.document.title=" آزمون " + bookname + " پایه " + gradename;
+    printWindow.document.title=" آزمون پایه " + gradename;
     printWindow.document.close();
     printWindow.print();
 

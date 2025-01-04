@@ -10,41 +10,15 @@
 
 <body>
     <header class="header">
-        <span class="header_icon"><i class="fa fa-bars"></i></span>
-        <h2>طراحی آزمون دروس دوره متوسطه</h2>
-    
-    
-    <ul class="side-menu">
-        <li class="header-btn aboutbtn">درباره ما</li>
-        <li class="header-btn contactbtn">ارتباط با ما</li>
-        <li class="header-btn instructionbtn">راهنمای استفاده از سایت</li>
-    </ul>
-
-    <div class="btntext">
-        <p class="about"></p>
-        <p class="contact">
-                شما می توانید از طریق ایمیل mmoradimeghdad@gmail.com با بنده در ارتباط باشید.
-        </p>
-        <p class="instruction">
-            ابتدا پایه تحصیلی و سپس فصل مورد نظر خود را انتخاب کنید تا سؤالهای مربوطه نمایش داده شود. سپس با کلیک روی هر سؤال می توانید آن را در فرم سؤالها مشاهده کنید. پس از انتخاب همه سؤالهای مورد نظر خود، با کلیک روی دکمه چاپ سؤالها می توانید از فرم سؤالات خروجی بگیرید.
-        </p>
-    </div>
-    </header>
-            
-    <main class="main">
-        <div class="container">
-            <section class="topmain">
-                <div class="topmaintext">
-                    <h2>تنها با چند کلیک</h2><br>
-                    <h3>به آسانی و در عرض چند دقیقه</h2><br>
-                    <h1>آزمون استاندارد بسازید</h1> 
-                 </div>
-                 <div class="topmainimg">
-                     <img src="images/002.png" alt="">
-                 </div>
-            </section>
-
-            <section class="middlemain">
+        <div class="header-upper-elements">
+            <a href="./homepage.html">ریاضی یار</a>
+            <a href="#">دوره های آموزشی</a>
+            <a href="#">مقالات آموزشی</a>
+        </div>
+        <div class="header-lower-elements">
+            <h1>طراحی آزمون های استاندارد ریاضی</h1>
+            <p>با چندتا کلیک آزمون ریاضی بساز </p>
+            <div class="gradeandchapter-wrapper">
                 <div class="dropdown-box">
                     <div class="dropdown-wrapper gradesbtn-box">
                       <button class="dropdown-btn">پایه تحصیلی
@@ -62,25 +36,6 @@
                             <a class="gradesbtn">دهم</a>
                             <a class="gradesbtn">یازدهم</a>
                             <a class="gradesbtn">دوازدهم</a>
-                        </div>
-                    </div>
-                    <div class="dropdown-wrapper book-box">
-                        <button class="dropdown-btn">نام کتاب 
-                            <svg class="chevron-left" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                            </svg>
-                            <svg class="chevron-top" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                            </svg>
-                        </button>
-                        <div class="dropdown-content">
-                            <a class="book math">ریاضی</a>
-                            <a class="book social">مطالعات اجتماعی</a>
-                            <a class="book science">علوم</a>
-                            <a class="book arabi">عربی</a>
-                            <a class="book religion">دینی</a>
-                            <a class="book persian">ادبیات فارسی</a>
-                            <a class="book english">زبان انگلیسی</a>
                         </div>
                     </div>
                     <div class="dropdown-wrapper chapter-box">
@@ -105,14 +60,17 @@
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <section class="bottommain">
                 <div class="text-box">
-                    <p class="selectedbook"></p>
                     <p class="selectedgrade"></p>
                     <p class="selectedchapter"></p>
                  </div>
+
+            </div>
+        </div>
+    </header>
+            
+    <main class="main">
+            <section class="bottommain">
                     <div class="questionlist-wrapper">
                         <table class="questionlist-table">
                             <tr class="qtitr">
