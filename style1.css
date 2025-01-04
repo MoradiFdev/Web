@@ -1,0 +1,532 @@
+
+@media print {
+   input{
+    border: none;
+  }
+}
+
+@font-face {
+    font-family: "Shabnam-FD" ;
+    src: url("./fonts/Shabnam-FD.woff2");
+  } 
+
+    
+  * {
+     font-family: "Shabnam-FD";
+      box-sizing: border-box;
+      margin: 0;
+      direction: rtl;
+      text-align: right;
+  }
+  
+  .header, .footer {
+     
+  }
+
+  .header-upper-elements1{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    gap: 0.2rem;
+    position: fixed;
+    top: 0;
+    transition: all 1s ease;
+    background-color: transparent;
+    backdrop-filter: blur(30px);
+    width: 100%;
+}
+
+.header-upper-elements1 a{
+    width: 120px;
+    height: 30px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+  
+.header-lower-elements{
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px;
+    gap: 1rem;
+    color: white;
+    background-image: url('./images/bgc14.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}  
+
+.gradeandchapter-wrapper{
+  margin-top: -20px;
+  align-self: flex-start;
+  display: flex;
+  justify-content: flex-start;
+}
+
+  .dropdown-box{
+    align-self: flex-start;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  
+  .text-box{
+    align-self: flex-start;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .text-box p{
+    min-width: 140px;
+    height: 50px;
+    padding: 0.7rem;
+    background-color: transparent;
+    color: #2f5bea;
+    border-radius: 1rem;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .dropdown-wrapper{
+    min-width: 140px;
+    height: 50px;
+    padding: 0.7rem;
+    background-color:#1E88E5;
+    border-radius: 1rem;
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .dropdown-wrapper:nth-child(2){
+    background-color: #fb8c00;
+  }
+
+  .dropdown-content{
+    position: absolute;
+    display: flex;
+    background-color: #fff;
+    border-radius: 1rem;
+    transition: all 1s ease;
+    margin-top: -37px;
+    margin-right: 130px;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .dropdown-wrapper:hover .dropdown-content{
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .dropdown-wrapper:hover .dropdown-content a{
+    font-size: 14px;
+  }
+
+  .dropdown-wrapper:hover svg{
+    transform: rotate(180deg);
+  }
+
+  .dropdown-content a{
+    height: 50px;
+    border-left: 2px solid #2f5bea;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    font-size: 0;
+    transition: all 0.7s ease;
+  }
+
+  .dropdown-content a:hover{
+    transform: scale(1.4);
+    background-color: #1E88E5 !important;
+    border: none;
+  }
+
+  .dropdown-btn{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    outline: none;
+    gap: 10px;
+    background-color: transparent;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  svg {
+    transition: all 1.2s ease;
+  }
+
+  .chevron-left{
+    width: 24px;
+    height: 24px;
+  }
+
+  .chevron-top{
+    display: none;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .container{
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 1rem;
+    background-color: #2f5bea;
+  }
+  
+  .buttons-wrapper{
+    width: 710px;
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    list-style-type: none;
+    padding: 0.5rem 0;
+    gap: 0.5rem;
+  }
+  
+  .buttons-wrapper li {
+    height:40px;
+    background-color: #fff;
+    backdrop-filter: blur(15px);
+    color: rgb(47, 91, 234);
+    border-radius: 0.5rem;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    font-family: "Shabnam-FD";
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+.userinputs{
+  display: grid;
+  grid-template-columns: 240px 300px 240px;
+  grid-template-rows: 40px 40px 40px;
+  border: 1px solid black;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.userinputs input{
+    width: 120px;
+    border: none;
+    outline: none;
+    background-color: #2f5bea;
+    color: #fff;
+    font-family: "Shabnam-FD";
+  }
+
+.input-box, .form-box{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    gap: 0.2rem;
+  }
+
+  .input-box{
+    border: 2px solid #fff;
+    border-radius: 0.5rem;
+  }
+  
+  .test-box{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-columns: 15% 80%;
+  }
+
+  .test-box input{
+    width: 100%;
+  }
+
+  .school-box input{
+    width: 200px;
+  }
+
+  .forminfo{
+    display: grid;
+    grid-template-columns: 26% 48% 26%;
+    grid-template-rows: 40px 40px 40px;
+    border: 1px solid black;
+    padding: 0.5rem;
+  }
+
+  .centerfield{
+    justify-self: center;
+  }
+  
+  .buttons-wrapper li:hover {
+    font-weight: bold;
+    color: #fff;
+    background-color: #1E88E5;
+  }
+  
+  .questionlist-wrapper {
+    overflow-y: auto;
+    outline: none;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    width: 720px;
+    height: 500px;
+  }
+  
+  .questionlist-table{
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .qtitr {
+    position: sticky;
+    top: -1;
+    background-color: #2f5bea;
+  }
+
+  .plus{
+    margin: 5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 0.5rem;
+    background-image: url(./plus.svg);
+    background-color: #2f5bea;
+    cursor: pointer;
+    transition: all 0.8s ease;
+  }
+
+ .plus:hover{
+    background-color: green;
+    transform: scale(1.4) rotate(90deg);
+  }
+
+  .limage {
+    display: flex;
+    width: 640px;
+    transition: all 1s ease;
+  }
+
+.qtable-wrapper{
+    width: 720px;
+    background-color: #fff;
+  }
+    
+  .questionlist-wrapper td {
+    border: 2px solid black;
+    text-align: center;
+  }
+  
+  .questionlist-wrapper th {
+    border:2px solid black;
+    text-align: center;
+  }
+  
+  .bottommain {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin-right: -2600px;
+    transition: 1.5s all ease;
+  }
+  
+  .titr {
+    display: flex;
+    height: 30px; 
+  }
+  
+  .besm {
+    padding-bottom: 10px;
+  }
+  
+  
+  .questionstable{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+  
+  .questions {
+    position: relative;
+    text-align: center;
+    border-top: 1px solid black;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .qimage {
+    width: 640px;
+    margin: 5px 0;
+  }
+  
+  .questionnumber {
+    position: relative;
+    text-align: center;
+    width: 20px;
+    font-size: 80%;
+    border: 1px solid black;
+    }
+  
+  .marks {
+    width: 35px;
+    position: relative;
+    text-align: center;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    font-size: 80%;
+  }
+  
+  .marks input {
+    font-family: "Shabnam-FD";
+    text-align: center;
+    width: 90%;
+    height: 70%;
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    border: none;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  
+  .marks input:hover {
+    background-color: powderblue;
+  }
+  
+  .questionnumber button {
+    position: absolute;
+    top: 15px;
+    right: 4px;
+    width: 22px;
+    height: 22px;
+    background-color: #1E88E5;
+    border-radius: 0.3rem;
+    border:none;
+    cursor: pointer;
+    padding: 0.2rem;
+    transition: all 0.8s ease;
+    background-image: url(./delete.svg);
+  }
+  
+  .questionnumber button:hover{
+    background-color: red;
+    transform: scale(1.3);
+  }
+  
+  .footer p{
+    text-align: center;
+  }
+  
+@media (max-width: 1100px){
+  h1, h2, h3{
+    font-size: 80%;
+  }
+  .middlemain{
+    flex-direction: row;
+    justify-content: center;
+  }
+  .dropdown-box{
+    flex-direction: row;
+    align-items: center;
+  }
+  .dropdown-wrapper{
+    flex-direction: column;
+    max-width: 130px;
+    max-height: 40px;
+  }
+  .chevron-left{
+    display: none;
+  }
+  .chevron-top{
+    display: block;
+  }
+ .dropdown-content{
+    flex-direction: column;
+    width: 100%;
+    margin-top: 18px;
+    margin-right: -12px;
+    font-size: 10px;
+  }
+  .dropdown-content a{
+    height: 10%;
+    border-left: none;
+    border-bottom: 1px solid #2f5bea;
+  }
+  .dropdown-wrapper:hover .dropdown-content a{
+    font-size: 10px;
+  }
+  .text-box p{
+    max-width: 80px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 900px){
+  .questionlist-wrapper, .qtable-wrapper, .form-wrapper{
+    max-width: 700px;
+  }
+  .form-wrapper{
+    align-items: center;
+    font-size: 12px;
+  }
+  .userinputs{
+    display: flex;
+    flex-direction: column;
+  }
+  .test-box{
+    margin: 0;
+    max-width: 400px;
+  }
+  .test-box input{
+    max-width: 300px;
+  }
+  .buttons-wrapper{
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width: 800px){
+  .questionlist-wrapper, .qtable-wrapper, .form-wrapper{
+    max-width: 350px;
+  }
+  .questionlist-wrapper img{
+    max-width: 290px;
+  }
+  .qtable-wrapper img{
+    max-width: 290px;
+  }
+.main *,.main li{
+    font-size: 10px;
+  }
+}

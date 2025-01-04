@@ -25,6 +25,17 @@ let selectedgrade=document.querySelector('.selectedgrade');
 let selectedchapter=document.querySelector('.selectedchapter');
 let dropdownwrapper=document.querySelectorAll('.dropdown-wrapper');
 let headerlowerelements=document.querySelector('.header-lower-elements');
+let headerbtn=document.querySelector('.header-upper-elements');
+
+window.addEventListener('scroll', function(){
+    headerbtn.style.top='-50px';
+   
+});
+
+window.addEventListener('scrollend', function(){
+    headerbtn.style.top='0';
+
+});
 
 let mathsource = [[[
     //کتاب ریاضی هفتم

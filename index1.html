@@ -1,0 +1,186 @@
+﻿<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>آزمونساز</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-upper-elements1">
+            <a href="./index.html">ریاضی یار</a>
+            <a href="#">دوره های آموزشی</a>
+            <a href="#">مقالات آموزشی</a>
+        </div>
+        <div class="header-lower-elements">
+            <h1>طراحی آزمون های استاندارد ریاضی</h1>
+            <p>با چندتا کلیک آزمون ریاضی بساز </p>
+            <div class="gradeandchapter-wrapper">
+                <div class="dropdown-box">
+                    <div class="dropdown-wrapper gradesbtn-box">
+                      <button class="dropdown-btn">پایه تحصیلی
+                        <svg class="chevron-left" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
+                        <svg class="chevron-top" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                        </svg>
+                      </button>
+                        <div class="dropdown-content">
+                            <a class="gradesbtn">هفتم</a>
+                            <a class="gradesbtn">هشتم</a>
+                            <a class="gradesbtn">نهم</a>
+                            <a class="gradesbtn">دهم</a>
+                            <a class="gradesbtn">یازدهم</a>
+                            <a class="gradesbtn">دوازدهم</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-wrapper chapter-box">
+                        <button class="dropdown-btn">فصل  
+                           <svg class="chevron-left" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                            </svg>
+                            <svg class="chevron-top" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                            </svg>
+                        </button>
+                        <div class="dropdown-content">
+                                <a class="chapter">فصل1</a>
+                                <a class="chapter">فصل2</a>
+                                <a class="chapter">فصل3</a>
+                                <a class="chapter">فصل4</a>
+                                <a class="chapter">فصل5</a>
+                                <a class="chapter">فصل6</a>
+                                <a class="chapter">فصل7</a>
+                                <a class="chapter">فصل8</a>
+                                <a class="chapter">فصل9</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box">
+                    <p class="selectedgrade"></p>
+                    <p class="selectedchapter"></p>
+                 </div>
+
+            </div>
+        </div>
+    </header>
+            
+    <main class="main">
+            <section class="bottommain">
+                    <div class="questionlist-wrapper">
+                        <table class="questionlist-table">
+                            <tr class="qtitr">
+                                <th>ردیف</th>
+                                <th>شرح سوال</th>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                        <div class="userinputs">			
+                            <div class="input-box">
+                                <div>پایه تحصیلی:</div>
+                                <div><input type="text" class="inputwrapper"></div>
+                            </div>
+                            <div class="input-box">
+                                <div>آموزش و پرورش منطقه</div>
+                                <div><input type="text" class="inputwrapper"></div>
+                            </div>
+                            <div class="input-box">
+                                <div>تاریخ آزمون:</div>
+                                <div><input type="text" class="inputwrapper"></div>
+                            </div>
+                            <div class="input-box">
+                                <div>سال تحصیلی:</div>
+                                <div><input type="text" class="inputwrapper"></div>
+                            </div>
+                            <div class="input-box school-box">
+                                <div>نام مدرسه:</div>
+                                <div><input type="text" class="inputwrapper"></div>
+                            </div>
+                            <div class="input-box">
+                                <div>مدت آزمون:</div>
+                                <div><input type="text" class="inputwrapper"></div>
+                            </div>
+                            <div class="input-box test-box">
+                                <div>شرح آزمون:</div>
+                                <div><input type="text" class="inputwrapper"></div>
+                            </div>
+                            <div class="input-box pagenumber" title="ابتدا دکمه چاپ آزمون را بزنید تا تعداد صفحات را مشاهده کنید. سپس مقدار آن را در این کادر قرار دهید.">
+                                <div> تعداد صفحات:</div>
+                                <div><input type="text" class="inputwrapper"></div>
+                            </div>
+                        </div>
+
+                        <div class="ul-wrapper">
+                            <ul class="buttons-wrapper">
+                                <li id="insertallquestions">قرار دادن همه سؤالها در فرم</li>
+                                <li id="clearall">حذف همه سؤالها</li>
+                                <li id="numbering"> شماره گذاری و آماده سازی برای چاپ</li>
+                                <li id="sendtoPDF">چاپ آزمون</li>
+                            </ul>
+                        </div>
+
+                    <div class="qtable-wrapper">			
+                        <div class="forminfo"> 
+                            <div class="form-box">
+                                <div class="testgrade">پایه تحصیلی:</div>
+                                <div class="testgradevalue inputs"></div>
+                            </div>
+                            <div class="form-box centerfield">
+                                <div class="regiontitr">آموزش و پرورش منطقه</div>
+                                <div class="regionvalue inputs"></div>
+                            </div>
+                            <div class="form-box">
+                                <div class="testdate">تاریخ آزمون:</div>
+                                <div class="datevalue inputs"></div>
+                            </div>
+                            <div class="form-box">
+                                <div class="educationyear">سال تحصیلی:</div>
+                                <div class="yearvalue inputs"></div>
+                            </div>
+                            <div class="form-box centerfield">
+                                <div class="schoolname">نام مدرسه:</div>
+                                <div class="schoolvalue inputs"></div>
+                            </div>
+                            <div class="form-box">
+                                <div class="testtime">مدت آزمون:</div>
+                                <div class="testtimevalue inputs"></div>
+                            </div>
+                            <div class="form-box">
+                                <div class="studentname">نام دانش آموز:</div>
+                            </div>
+                            <div class="form-box centerfield">
+                                <div class="testterm">شرح آزمون:</div>
+                                <div class="testdescvalue inputs"></div>
+                            </div>
+                            <div class="form-box">
+                                <div class="numberofpages">تعداد صفحه:</div>
+                                <div class="npagesvalue inputs"></div>
+                            </div>
+                        </div>
+                            <table class="questionstable">
+                                <tr>
+                                    <th class="questionnumber">ردیف</th>
+                                    <th class="questions">سؤالات</th>
+                                    <th class="marks" title="نمره هر سؤال را وارد کنید.">بارم</th>
+                                </tr>
+                            </table>
+                    </div>
+            </section>
+        </div>
+    </main>
+            
+    
+
+<footer class="footer">
+    <p>کلیه حقوق محفوظ است.</p>
+</footer>
+
+<script src="./scripts.js"></script>
+
+</body>
+</html>
