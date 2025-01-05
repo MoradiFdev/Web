@@ -6,15 +6,6 @@ let qlist = document.querySelector('.questionlist-table');
 let qtablewrapper = document.querySelector('.qtable-wrapper');
 let testgradecontent=document.querySelector('.testgradecontent');
 let insertallquestions = document.getElementById('insertallquestions');
-let bottommain=document.querySelector(".bottommain");
-let sidemenu=document.querySelector(".side-menu");
-let aboutbtn=document.querySelector(".aboutbtn");
-let contactbtn=document.querySelector(".contactbtn");
-let instructionbtn=document.querySelector(".instructionbtn");
-let btntext=document.querySelector(".btntext");
-let about=document.querySelector(".about");
-let contact=document.querySelector(".contact");
-let instruction=document.querySelector(".instruction");
 let chapter=document.querySelectorAll(".chapter");
 let gradesbtn=document.querySelectorAll(".gradesbtn");
 let questionlistwrapper=document.querySelector(".questionlist-wrapper");
@@ -26,15 +17,14 @@ let selectedchapter=document.querySelector('.selectedchapter');
 let dropdownwrapper=document.querySelectorAll('.dropdown-wrapper');
 let headerlowerelements=document.querySelector('.header-lower-elements');
 let headerbtn=document.querySelector('.header-upper-elements');
+let main=document.querySelector('.main');
 
 window.addEventListener('scroll', function(){
     headerbtn.style.top='-50px';
-   
 });
 
 window.addEventListener('scrollend', function(){
     headerbtn.style.top='0';
-
 });
 
 let mathsource = [[[
@@ -1423,7 +1413,7 @@ for (let i=0; i<gradesbtn.length; i++){
         chapter[s].addEventListener('click',function(){
             chapternumber=s;
             selectedchapter.innerHTML=chapter[s].innerHTML;
-            bottommain.style.marginRight="0";
+            main.style.marginRight="0";
             chapter[s].style.backgroundColor="#42A5F5";
             for (let j=0;j<chapter.length;j++){
                 if (j!=s){
@@ -1440,6 +1430,8 @@ for (let i=0; i<gradesbtn.length; i++){
 
 function loadques(gradenumber,chapternumber){
             headerlowerelements.style.height='350px';
+            main.style.marginRight="0";
+            main.style.display='flex';
             for (let k = 0; k < source[gradenumber][chapternumber].length; k++) {
                 var newqlRow = qlist.insertRow();
                 newqlRow.className = "qlrow";
@@ -1457,7 +1449,7 @@ function loadques(gradenumber,chapternumber){
                 } 
                 plusq=document.createElement('div');
                 plusq.className="plus";
-                plusq.title="برای اضافه شدن به فرم، کلیک کنید.";
+                plusq.title="برای اضافه شدن این سؤال به فرم سؤالات، کلیک کنید.";
                 cell1.appendChild(plusq);
                 // cell1.className="questionlnumber";
                 var cell2 = newqlRow.insertCell();
@@ -1551,18 +1543,18 @@ sendtoPDF.addEventListener('click', function() {
     qtablewrapper.cloneNode(true);
     let printWindow=window.open('' ,'_blank');
     printWindow.document.write("<html><head><title></title>");
-    printWindow.document.write("<link rel='stylesheet' type='text/css' href='./style.css'>");
+    printWindow.document.write("<link rel='stylesheet' type='text/css' href='./style1.css'>");
     printWindow.document.write("</head><body>");
     printWindow.document.write(qtablewrapper.innerHTML);
     printWindow.document.write("</body></html>");
-    printWindow.document.title=" آزمون پایه " + gradename;
-    printWindow.document.close();
+    printWindow.document.title=" آزمون ریاضی پایه " + gradename;
     printWindow.print();
+    printWindow.document.close();
 
     printWindow.onafterprint=function(){
         printWindow.close();
     }
-})
+});
 
 clearall.addEventListener('click', clearformquestions);
 
