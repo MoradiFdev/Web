@@ -36,13 +36,13 @@
 
 .header-lower-elements{
     width: 100vw;
-    height: 1000px;
+    height: 960px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding-top: 100px;
-    gap: 1rem;
+    gap: 1.5rem;
     color: white;
     background-image: url('./images/bgc5.jpg');
     background-repeat: no-repeat;
@@ -52,30 +52,36 @@
     box-shadow: 2px 2px 10px  #2f5bea;
 }
 
+.header-lower-elements p{
+    color: grey;
+}
+
 .search-wrapper{
     width: 600px;
     height: 40px;
     border-radius: 2rem;
-    margin-top: 40px;
 }
+
 .searcher-input{
     width: 100%;
     height: 100%;
     color: grey;
     outline: none;
-    border: none;
     border-radius: 2rem;
     padding-right: 1rem;
     font-size: 18px;
-    background-color: whitesmoke;
+    background-color: transparent;
+    background-clip: padding-box;
+    border-color: hsla(0,0%,100%,.2);
 }
 
 .header-lower-btns{
-    margin-top: 20px;
-    display: flex;
+    width: 600px;
+    display: grid;
+    grid-template-columns: 190px 190px 190px;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 15px;
 }
 
 .header-lower-btns a{
@@ -83,7 +89,6 @@
     border-radius: 1rem;
     color: #fff;
     font-size: 18px;
-    width: 150px;
     height: 50px;
     background-color:#42a5f5;
     text-align: center;
@@ -101,7 +106,8 @@
 }
 
 .main{
-    margin-top: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,8 +115,8 @@
 
 .course-container{
     display: grid;
-    grid-template-columns: 300px 300px 300px;
-    grid-template-rows: 270px 270px;
+    grid-template-columns: repeat(3,350px);
+    grid-template-rows: repeat(2,250px);
     gap: 0.5rem;
 }
 
@@ -164,40 +170,61 @@ img{
     height: 70px;
     background-image: url('./images/bgc18.jpg');
     border-radius: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
     box-shadow: 2px 2px 10px #2f5bea;
     padding: 1.7rem;
+    margin-bottom: 0.5rem;
 }
 
 .footer p{
     text-align: center;
 }
 
+@media (max-width: 1440px) {
+    .header-lower-elements{
+        max-height: 960px;
+    }
+}
+@media (max-width: 1189px) {
+    .header-lower-elements{
+        max-height: 730px;
+    }
+}
+
+@media (max-width: 1108px) {
+    .header-lower-elements{
+        max-height: 660px;
+    }
+    .course-container{
+        grid-template-columns: repeat(3,250px);
+        grid-template-rows: repeat(2,200px);
+    }
+}
 @media (max-width: 980px) {
     .header-lower-elements{
-        height: 500px;
+        max-height: 500px;
     }
     .header-lower-elements h1{
         font-size: 30px;
     }
     .header-lower-elements .search-wrapper{
-        width: 40%;
-        margin-top: 0;
+        width: 500px;
     }
     .header-lower-elements .search-wrapper .searcher-input{
         font-size: 12px;
     }
+    .header-lower-btns{
+        width: 500px;
+        grid-template-columns: repeat(3,160px);
+    }
     .course-container{
-        grid-template-columns: 200px 200px 200px;
-        grid-template-rows: 170px 170px;
+        grid-template-columns: repeat(3,200px);
+        grid-template-rows: repeat(2,170px);
     }
     
 }
-
 @media (max-width: 750px){
     .header-lower-elements{
-        height: 400px;
+        max-height: 470px;
     }
     .header-lower-elements h1{
         font-size: 25px;
@@ -211,16 +238,21 @@ img{
         margin-top: -10px;
     }
 }
+@media (max-width: 708px){
+    .header-lower-elements{
+        max-height: 390px;
+    }
+}
 @media (max-width: 590px){
     .header-lower-elements{
-        height: 350px;
+        max-height: 350px;
     }
     .header-lower-elements h1{
         font-size: 20px;
     }
     .course-container{
-        grid-template-columns: 150px 150px 150px;
-        grid-template-rows: 100px 100px;
+        grid-template-columns: repeat(2,250px);
+        grid-template-rows: repeat(3,200px);
     }
     .course-container p{
         font-size: 14px;
@@ -234,9 +266,21 @@ img{
     .header-lower-elements h1{
         font-size: 20px;
     }
+    .header-lower-elements .search-wrapper{
+        width: 400px;
+    }
+    .header-lower-btns{
+        width: 400px;
+        grid-template-columns: repeat(3,130px);
+        gap: 5px;
+    }
+    .header-lower-btns a{
+        font-size: 12px;
+        height: 30px;
+    }
     .course-container{
-        grid-template-columns: 150px 150px 150px;
-        grid-template-rows: 100px 100px;
+        grid-template-columns: repeat(1, 350px);
+        grid-template-rows: repeat(6, 200px);
     }
     .course-container p{
         font-size: 14px;
@@ -250,37 +294,28 @@ img{
     .header-upper-elements a{
         font-size: 12px;
         width: 100px;
-
     }
     .header-lower-elements{
-        height: 240px;
+        height: 290px;
+        gap: 20px;
     }
     .header-lower-elements h1{
         font-size: 20px;
     }
     .header-lower-elements .search-wrapper{
-        width: 200px;
+        width: 300px;
         height: 30px;
-        margin-top: -10px;
-    }
-    .header-lower-elements .search-wrapper .searcher-input{
-        width: 200px;
-        height: 30px; 
     }
     .header-lower-btns{
-    margin-top: -10px;
+        width: 300px;
+        grid-template-columns: repeat(3,90px);
+        gap: 15px;
     }
     .header-lower-btns a{
-        width: 100px;
-        height: 20px;
         font-size: 10px;
-        padding-top: 0.2rem
+        height: 30px;
     }
-
-    .course-container{
-        grid-template-columns: 100px 100px 100px;
-        grid-template-rows: 80px 80px;
-    }
+   
     .course-container p{
         font-size: 14px;
         margin-top: -10px;
@@ -289,5 +324,24 @@ img{
         font-size: 12px;
     }
 }
-
+@media (max-width: 433px){
+    .header-upper-elements{
+        height: 30px;
+    }
+   
+    .header-lower-elements{
+        height: 230px;
+        gap: 10px;
+    }
+    .header-lower-btns{
+        width: 250px;
+        grid-template-columns: repeat(3,80px);
+        gap: 5px;
+}
+.header-lower-btns a{
+    font-size: 8px;
+    height: 15px;
+    padding: 0.1rem;
+}
+}
 
