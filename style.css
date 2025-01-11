@@ -181,10 +181,10 @@ img{
 
 @media (max-width: 1440px) {
     .header-lower-elements{
-        max-height: 960px;
+        max-height: 790px;
     }
 }
-@media (max-width: 1189px) {
+@media (max-width: 1190px) {
     .header-lower-elements{
         max-height: 730px;
     }
@@ -257,6 +257,21 @@ img{
     .course-container p{
         font-size: 14px;
         margin-top: -10px;
+    }
+    .header-lower-elements .search-wrapper{
+        width: 380px;
+    }
+    .header-lower-elements .search-wrapper .searcher-input{
+        font-size: 12px;
+    }
+    .header-lower-btns{
+        width: 380px;
+        grid-template-columns: repeat(3,120px);
+        gap: 10px;
+    }
+    .header-lower-btns a{
+        font-size: 10px;
+        height: 30px;
     }
 }
 @media (max-width: 526px){
@@ -333,15 +348,21 @@ img{
         height: 230px;
         gap: 10px;
     }
+    .header-lower-elements .search-wrapper{
+        width: 250px;
+    }
+    .header-lower-elements .search-wrapper .searcher-input{
+        font-size: 12px;
+    }
     .header-lower-btns{
         width: 250px;
         grid-template-columns: repeat(3,80px);
         gap: 5px;
-}
-.header-lower-btns a{
-    font-size: 8px;
-    height: 15px;
-    padding: 0.1rem;
-}
-}
+    }
+    .header-lower-btns a{
+        font-size: 8px;
+        height: 15px;
+        padding: 0.1rem;
+    }
+    }
 

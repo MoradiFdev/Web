@@ -105,7 +105,7 @@
   }
 
   .dropdown-wrapper{
-    min-width: 140px;
+    width: 140px;
     height: 50px;
     padding: 0.7rem;
     background-color:#1E88E5;
@@ -146,6 +146,7 @@
   }
 
   .dropdown-content a{
+    background-color: #fff;
     height: 50px;
     border-left: 2px solid #2f5bea;
     cursor: pointer;
@@ -157,7 +158,7 @@
   }
 
   .dropdown-content a:hover{
-    transform: scale(1.4);
+    transform: scale(1.2);
     background-color: #1E88E5 !important;
     border: none;
   }
@@ -177,7 +178,7 @@
   }
 
   svg {
-    transition: all 1.2s ease;
+    transition: all 1s ease;
   }
 
   .chevron-left{
@@ -187,8 +188,8 @@
 
   .chevron-top{
     display: none;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
   }
 
   .main{
@@ -260,7 +261,6 @@
       width: 120px;
       border: none;
       outline: none;
-      color: #fb8c00;
       font-size: 14px;
       font-weight: bold;
     }
@@ -303,7 +303,7 @@
   }
 
   .input-box{
-    border: 2px solid #fff;
+    border: 2px solid grey;
     border-radius: 0.5rem;
   }
   
@@ -454,51 +454,149 @@
 .footer p{
     text-align: center;
 }
-  
-@media (max-width: 1100px){
+@media (max-width: 1440px) {
+  .header-lower-elements{
+      max-height: 790px;
+  }
+}
+@media (max-width: 1190px) {
+  .header-lower-elements{
+      max-height: 730px;
+  }
+}
+
+@media (max-width: 1108px) {
+  .header-lower-elements{
+      max-height: 660px;
+  }
+}
+@media (max-width: 980px) {
+  .header-lower-elements{
+      max-height: 500px;
+  }
+  .header-lower-elements h1{
+      font-size: 30px;
+  }
+}
+@media (max-width: 750px){
+  .header-lower-elements{
+      max-height: 470px;
+  }
+  .header-lower-elements h1{
+      font-size: 25px;
+  }
+ }
+@media (max-width: 708px){
+  .header-lower-elements{
+      max-height: 390px;
+  }
+}
+@media (max-width: 590px){
+  .header-lower-elements{
+      max-height: 350px;
+  }
+  .header-lower-elements h1{
+      font-size: 20px;
+  }
+}
+@media (max-width: 526px){
+  .header-lower-elements{
+      height: 320px;
+  }
+  .header-lower-elements h1{
+      font-size: 20px;
+  }
+}
+@media (max-width: 480px){
+  .header-upper-elements{
+      height: 30px;
+  }
+  .header-upper-elements a{
+      font-size: 12px;
+      width: 100px;
+  }
+  .header-lower-elements{
+      height: 290px;
+      gap: 20px;
+  }
+  .header-lower-elements h1{
+      font-size: 20px;
+  }
+  .footer p{
+      font-size: 12px;
+  }
+}
+@media (max-width: 433px){
+  .header-upper-elements{
+      height: 30px;
+  }
+  .header-lower-elements{
+      height: 230px;
+      gap: 10px;
+  }
+  }
+@media (max-width: 600px){
   h1, h2, h3{
     font-size: 80%;
   }
-  .main{
-    flex-direction: row;
-    justify-content: center;
+  .gradeandchapter-wrapper{
+    align-self: center;
+    margin-right: auto;
+    margin-left: auto;
+    flex-direction: column;
   }
   .dropdown-box{
     flex-direction: row;
-    align-items: center;
-  }
-  .dropdown-wrapper{
-    flex-direction: column;
-    max-width: 130px;
-    max-height: 40px;
   }
   .chevron-left{
-    display: none;
+   display: none;
   }
   .chevron-top{
     display: block;
   }
- .dropdown-content{
+  .dropdown-wrapper{
+    height: 30px;
+    padding-top: 0.3rem;
+  }
+  .dropdown-content{
     flex-direction: column;
-    width: 100%;
-    margin-top: 18px;
+    margin-top: 8px;
     margin-right: -12px;
-    font-size: 10px;
+    width: 100%;
+    height: 30px;
+    z-index: 3;
   }
   .dropdown-content a{
-    height: 10%;
     border-left: none;
-    border-bottom: 1px solid #2f5bea;
+    border-bottom: 2px solid #2f5bea;
+    font-size: 12px;
+  }
+ .chapter-content{
+   flex-direction: column;
   }
   .dropdown-wrapper:hover .dropdown-content a{
     font-size: 10px;
   }
+  .text-box{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-top: 60px;
+  }
   .text-box p{
     max-width: 80px;
     font-size: 12px;
+    text-align: center;
+  }
+  .footer{
+    margin-top: 26.9rem;
+  }
+  .footer p{
+    font-size: 10px;
   }
 }
-
 @media (max-width: 900px){
   .questionlist-wrapper, .qtable-wrapper, .form-wrapper{
     max-width: 700px;
