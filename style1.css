@@ -11,7 +11,6 @@
     src: url("./fonts/Shabnam-FD.woff2");
   } 
 
-    
   * {
      font-family: "Shabnam-FD";
       box-sizing: border-box;
@@ -47,14 +46,14 @@
 }
   
 .header-lower-elements{
-  width: 100%;
+  width: 100vw;
   height: 960px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding-top: 100px;
-  gap: 1rem;
+  gap: 1.5rem;
   color: white;
   background-image: url('./images/bgc5.jpg');
   background-repeat: no-repeat;
@@ -154,7 +153,7 @@
     padding: 0.7rem;
     border-radius: 1rem;
     font-size: 0;
-    transition: all 0.7s ease;
+    transition: all 0.5s ease;
   }
 
   .dropdown-content a:hover{
@@ -200,7 +199,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: all 1.2s ease-in-out;
+    transition: all 1s ease-in-out;
   }
   
   .questionlist-wrapper {
@@ -454,88 +453,82 @@
 .footer p{
     text-align: center;
 }
+
 @media (max-width: 1440px) {
   .header-lower-elements{
-      max-height: 790px;
+      height: 790px;
   }
 }
 @media (max-width: 1190px) {
   .header-lower-elements{
-      max-height: 730px;
+     height: 730px;
   }
 }
 
 @media (max-width: 1108px) {
   .header-lower-elements{
-      max-height: 660px;
+      height: 660px;
   }
 }
 @media (max-width: 980px) {
   .header-lower-elements{
-      max-height: 500px;
+      height: 600px;
   }
   .header-lower-elements h1{
       font-size: 30px;
   }
+  .questionlist-wrapper, .qtable-wrapper, .form-wrapper{
+    max-width: 700px;
+  }
+  .form-wrapper{
+    align-items: center;
+    font-size: 12px;
+  }
+  .userinputs{
+    display: flex;
+    flex-direction: column;
+  }
+  .test-box{
+    margin: 0;
+    max-width: 400px;
+  }
+  .test-box input{
+    max-width: 300px;
+  }
+  .buttons-wrapper{
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    font-size: 12px;
+  }
+  .footer{
+    margin-top: 10rem;
+  }
 }
 @media (max-width: 750px){
   .header-lower-elements{
-      max-height: 470px;
+      height: 570px;
   }
   .header-lower-elements h1{
       font-size: 25px;
   }
+  .questionlist-wrapper, .qtable-wrapper, .form-wrapper{
+    max-width: 350px;
+  }
+  .questionlist-wrapper img{
+    max-width: 290px;
+  }
+  .qtable-wrapper img{
+    max-width: 290px;
+  }
+.main *,.main li{
+    font-size: 10px;
+  }
  }
 @media (max-width: 708px){
   .header-lower-elements{
-      max-height: 390px;
+      height: 490px;
   }
-}
-@media (max-width: 590px){
-  .header-lower-elements{
-      max-height: 350px;
-  }
-  .header-lower-elements h1{
-      font-size: 20px;
-  }
-}
-@media (max-width: 526px){
-  .header-lower-elements{
-      height: 320px;
-  }
-  .header-lower-elements h1{
-      font-size: 20px;
-  }
-}
-@media (max-width: 480px){
-  .header-upper-elements{
-      height: 30px;
-  }
-  .header-upper-elements a{
-      font-size: 12px;
-      width: 100px;
-  }
-  .header-lower-elements{
-      height: 290px;
-      gap: 20px;
-  }
-  .header-lower-elements h1{
-      font-size: 20px;
-  }
-  .footer p{
-      font-size: 12px;
-  }
-}
-@media (max-width: 433px){
-  .header-upper-elements{
-      height: 30px;
-  }
-  .header-lower-elements{
-      height: 230px;
-      gap: 10px;
-  }
-  }
-@media (max-width: 600px){
   h1, h2, h3{
     font-size: 80%;
   }
@@ -591,51 +584,43 @@
     text-align: center;
   }
   .footer{
-    margin-top: 26.9rem;
+    margin-top: 19.5rem;
   }
   .footer p{
     font-size: 10px;
   }
 }
-@media (max-width: 900px){
-  .questionlist-wrapper, .qtable-wrapper, .form-wrapper{
-    max-width: 700px;
+@media (max-width: 590px){
+  .header-lower-elements{
+      height: 390px;
   }
-  .form-wrapper{
-    align-items: center;
-    font-size: 12px;
-  }
-  .userinputs{
-    display: flex;
-    flex-direction: column;
-  }
-  .test-box{
-    margin: 0;
-    max-width: 400px;
-  }
-  .test-box input{
-    max-width: 300px;
-  }
-  .buttons-wrapper{
-    display: flex;
-    flex-direction: column;
-    max-width: 250px;
-    font-size: 12px;
-  }
-
-}
-
-@media (max-width: 800px){
-  .questionlist-wrapper, .qtable-wrapper, .form-wrapper{
-    max-width: 350px;
-  }
-  .questionlist-wrapper img{
-    max-width: 290px;
-  }
-  .qtable-wrapper img{
-    max-width: 290px;
-  }
-.main *,.main li{
-    font-size: 10px;
+  .header-lower-elements h1{
+      font-size: 20px;
   }
 }
+@media (max-width: 526px){
+  .header-lower-elements{
+      height: 350px;
+  }
+  .header-lower-elements h1{
+      font-size: 20px;
+  }
+}
+@media (max-width: 480px){
+  .header-upper-elements{
+      height: 30px;
+  }
+  .header-upper-elements a{
+      font-size: 12px;
+      width: 100px;
+  }
+  .footer p{
+      font-size: 12px;
+  }
+}
+@media (max-width: 433px){
+  .header-upper-elements{
+      height: 30px;
+  }
+  }
+ 

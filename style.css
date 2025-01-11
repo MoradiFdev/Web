@@ -46,7 +46,7 @@
     color: white;
     background-image: url('./images/bgc5.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
     box-shadow: 2px 2px 10px  #2f5bea;
@@ -189,7 +189,6 @@ img{
         max-height: 730px;
     }
 }
-
 @media (max-width: 1108px) {
     .header-lower-elements{
         max-height: 660px;
@@ -220,7 +219,6 @@ img{
         grid-template-columns: repeat(3,200px);
         grid-template-rows: repeat(2,170px);
     }
-    
 }
 @media (max-width: 750px){
     .header-lower-elements{
@@ -343,7 +341,6 @@ img{
     .header-upper-elements{
         height: 30px;
     }
-   
     .header-lower-elements{
         height: 230px;
         gap: 10px;
